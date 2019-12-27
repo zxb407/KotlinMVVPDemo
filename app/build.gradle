@@ -40,7 +40,7 @@ android {
     buildTypes {
 
         release {
-            minifyEnabled false
+            minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.config
 
@@ -107,7 +107,7 @@ android {
     }
 
     adbOptions {
-        timeOutInMs = 5 * 1000 //秒
+        timeOutInMs = 5 * 1000 //seconds
         installOptions '-r', '-s'
     }
 

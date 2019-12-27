@@ -1,8 +1,11 @@
 package com.jjshouse.kotlinmvvpdemo
 
 import android.os.Handler
-import android.os.Process
 import com.core.frame.LifecycleApplication
+import com.crashlytics.android.Crashlytics
+import io.fabric.sdk.android.Fabric
+
+
 
 /**
  * PackageName: com.jjshouse.kotlinmvvpdemo
@@ -17,16 +20,16 @@ class JJApplication : LifecycleApplication() {
         handler = Handler()
     }
 
+    override fun onCreate() {
+        super.onCreate()
+        Fabric.with(this, Crashlytics()) //此处手动初始化crashlytics，firecrash -> customCrashHandler -> defaultCrashHandler
+    }
+
     fun getMainHandler(): Handler {
         return handler
     }
 
-    fun exitProcess() {
-        Process.killProcess(Process.myPid())
-        System.exit(0)
-    }
-
-    companion object{
+    companion object {
         lateinit var instance: JJApplication
         lateinit var handler: Handler
     }

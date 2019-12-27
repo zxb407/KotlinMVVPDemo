@@ -1,10 +1,10 @@
-package com.core.frame
+package com.core.frame.manager
 
 import android.app.Activity
 import android.app.Application
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
+import com.blankj.utilcode.util.LogUtils
 import java.lang.ref.WeakReference
 import java.util.concurrent.CopyOnWriteArrayList
 
@@ -27,7 +27,8 @@ class ActivityLifecycleManager : Application.ActivityLifecycleCallbacks {
         private var instance: ActivityLifecycleManager? = null
         fun init(application: Application): ActivityLifecycleManager {
             if (instance == null) {
-                instance = ActivityLifecycleManager()
+                instance =
+                    ActivityLifecycleManager()
                 application.registerActivityLifecycleCallbacks(instance)
             }
             return instance as ActivityLifecycleManager
@@ -65,6 +66,7 @@ class ActivityLifecycleManager : Application.ActivityLifecycleCallbacks {
 
     override fun onActivityCreated(activity: Activity, p1: Bundle?) {
         totalActivityCount++
+        AppActivityManager.instance.addActivity(activity)
     }
 
     override fun onActivityStarted(activity: Activity) {
@@ -78,7 +80,7 @@ class ActivityLifecycleManager : Application.ActivityLifecycleCallbacks {
         sCurrentActivityWeakRef = WeakReference(activity)
         if (!foreground) {
             foreground = true
-            Log.d("Lifecycle", "app into the foreground")
+            LogUtils.dTag("Lifecycle", "app into the foreground")
         }
     }
 
@@ -89,14 +91,15 @@ class ActivityLifecycleManager : Application.ActivityLifecycleCallbacks {
         activityCount--
         if (activityCount == 0 && totalActivityCount > 0) {
             foreground = false
-            Log.d("Lifecycle", "app into the background")
+            LogUtils.dTag("Lifecycle", "app into the background")
         }
 
     }
 
     override fun onActivityDestroyed(activity: Activity) {
         totalActivityCount--
-        if (totalActivityCount == 0) Log.d("Lifecycle", "app exit")
+        AppActivityManager.instance.removeActivity(activity)
+        if (totalActivityCount == 0) LogUtils.dTag("Lifecycle", "app exit")
     }
 
     fun isForeground(): Boolean {

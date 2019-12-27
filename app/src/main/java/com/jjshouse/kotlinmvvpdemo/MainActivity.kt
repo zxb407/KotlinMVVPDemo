@@ -1,9 +1,9 @@
 package com.jjshouse.kotlinmvvpdemo
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import com.crashlytics.android.Crashlytics
 
 class MainActivity : AppCompatActivity() {
 
@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
-    public fun forceCrash(view: View){
-        Crashlytics.getInstance().crash()
+    public fun jump(view: View){
+        startActivity(Intent(this@MainActivity,SecondActivity::class.java))
     }
 }

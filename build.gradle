@@ -48,7 +48,7 @@ ext {
             versionCode     : 1,
             versionName     : "1.0.0"
     ]
-    BUILD = PROJECT_BUILD
+    enableProguardInReleaseBuilds = false
     retrofitVersion = '2.5.0'
     retrofitPackage = 'com.squareup.retrofit2'
     daggerVersion = '2.23.1'
@@ -96,6 +96,7 @@ ext {
             gson         : 'com.google.code.gson:gson:2.8.6',
             fastJson     : 'com.alibaba:fastjson:1.1.71.android',
             eventbus     : 'org.greenrobot:eventbus:3.1.1',
-            rxpermission : 'com.github.tbruyelle:rxpermissions:0.10.2'
+            rxpermission : 'com.github.tbruyelle:rxpermissions:0.10.2',
+            utilcode     : 'com.blankj:utilcode:1.14.0'
     ]
 }

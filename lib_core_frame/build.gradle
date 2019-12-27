@@ -5,14 +5,14 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion PROJECT_BUILD.compileVersion
 
 
     defaultConfig {
-        minSdkVersion 21
-        targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion PROJECT_BUILD.minSdkVersion
+        targetSdkVersion PROJECT_BUILD.targetSdkVersion
+        versionCode PROJECT_BUILD.versionCode
+        versionName PROJECT_BUILD.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
@@ -20,8 +20,19 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            buildConfigField "Boolean", "IS_DEBUG", RELEASE_DEBUG
+            buildConfigField "String", "DOMAIN", DOMAIN
+        }
+        preview {
+            buildConfigField "Boolean", "IS_DEBUG", PREVIEW_DEBUG
+            buildConfigField "String", "DOMAIN", DOMAIN
+        }
+        debug {
+            buildConfigField "Boolean", "IS_DEBUG", TEST_DEBUG
+            buildConfigField "String", "DOMAIN", DOMAIN
         }
     }
 
@@ -38,4 +49,5 @@ dependencies {
     api androidxDependencies.constraintlayout
     api androidxDependencies.recyclerview
     api androidxDependencies.multidex
+    api otherDependencies.utilcode
 }
