@@ -1,0 +1,175 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'io.fabric'
+
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+def keystoreProperties = new Properties()
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
+android {
+    compileSdkVersion PROJECT_BUILD.compileVersion
+    defaultConfig {
+        applicationId "com.jjshouse.kotlinmvvpdemo"
+        minSdkVersion PROJECT_BUILD.minSdkVersion
+        targetSdkVersion PROJECT_BUILD.targetSdkVersion
+        versionCode PROJECT_BUILD.versionCode
+        versionName PROJECT_BUILD.versionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        //support for vector graphics
+        vectorDrawables.useSupportLibrary = true
+        //open multidex
+        multiDexEnabled true
+
+
+        manifestPlaceholders = [domain: MANIFEST_DOMAIN]
+    }
+
+    signingConfigs {
+        config {
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePassword']
+        }
+    }
+
+    buildTypes {
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+
+            lintOptions {
+                disable 'MissingTranslation'
+                checkReleaseBuilds true
+                abortOnError true
+            }
+            buildConfigField "Boolean", "IS_DEBUG", RELEASE_DEBUG
+            buildConfigField "String", "ENV", RELEASE_ENV
+            buildConfigField "String", "BASE_URL", RELEASE_BASE_URL
+            buildConfigField "String", "APPSFLYER_KEY", RELEASE_APPSFLYER_KEY
+            buildConfigField "String", "DOMAIN", DOMAIN
+
+            resValue "string", "base_url", RELEASE_BASE_URL
+            resValue "string", "facebook_app_id", RELEASE_FACEBOOK_APP_ID
+            resValue "string", "fb_login_protocol_scheme", "fb" + RELEASE_FACEBOOK_APP_ID
+            resValue "string", "fb_provider", "com.facebook.app.FacebookContentProvider" + RELEASE_FACEBOOK_APP_ID
+        }
+
+        preview {
+            signingConfig signingConfigs.config
+            buildConfigField "Boolean", "IS_DEBUG", PREVIEW_DEBUG
+            buildConfigField "String", "ENV", PREVIEW_ENV
+            buildConfigField "String", "BASE_URL", PREVIEW_BASE_URL
+            buildConfigField "String", "APPSFLYER_KEY", PREVIEW_APPSFLYER_KEY
+            buildConfigField "String", "DOMAIN", DOMAIN
+
+            resValue "string", "base_url", PREVIEW_BASE_URL
+            resValue "string", "facebook_app_id", PREVIEW_FACEBOOK_APP_ID
+            resValue "string", "fb_login_protocol_scheme", "fb" + PREVIEW_FACEBOOK_APP_ID
+            resValue "string", "fb_provider", "com.facebook.app.FacebookContentProvider" + PREVIEW_FACEBOOK_APP_ID
+            matchingFallbacks = ['debug']
+            debuggable true
+        }
+
+        debug {
+            signingConfig signingConfigs.config
+            buildConfigField "Boolean", "IS_DEBUG", TEST_DEBUG
+            buildConfigField "String", "ENV", TEST_ENV
+            buildConfigField "String", "BASE_URL", TEST_BASE_URL
+            buildConfigField "String", "APPSFLYER_KEY", TEST_APPSFLYER_KEY
+            buildConfigField "String", "DOMAIN", DOMAIN
+
+            resValue "string", "base_url", TEST_BASE_URL
+            resValue "string", "facebook_app_id", TEST_FACEBOOK_APP_ID
+            resValue "string", "fb_login_protocol_scheme", "fb" + TEST_FACEBOOK_APP_ID
+            resValue "string", "fb_provider", "com.facebook.app.FacebookContentProvider" + TEST_FACEBOOK_APP_ID
+            debuggable true
+        }
+
+    }
+
+    // applicationVariants are e.g. debug, release
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "${project.name}_${defaultConfig.versionName}_${variant.buildType.name}_${buildTime()}.apk"
+        }
+    }
+
+    dexOptions {
+        threadCount 2
+        javaMaxHeapSize '4g'
+    }
+
+    adbOptions {
+        timeOutInMs = 5 * 1000 //秒
+        installOptions '-r', '-s'
+    }
+
+    dataBinding {
+        enabled true
+    }
+
+    androidExtensions {
+        experimental = true
+    }
+
+    lintOptions {
+        disable 'MissingTranslation'
+        disable 'ExtraTranslation'
+    }
+}
+
+def buildTime() {
+    def date = new Date()
+    def formattedDate = date.format('yyyyMMdd')
+    return formattedDate
+}
+
+task switchToDebug(type: Copy) {
+    description = 'Switches to DEBUG google-services.json'
+    from "src/debug"
+    include "google-services.json"
+    into "."
+}
+
+task switchToRelease(type: Copy) {
+    description = 'Switches to RELEASE google-services.json'
+    from "src/release"
+    include "google-services.json"
+    into "."
+}
+
+afterEvaluate {
+    processDebugGoogleServices.dependsOn switchToDebug
+    processPreviewGoogleServices.dependsOn switchToRelease
+    processReleaseGoogleServices.dependsOn switchToRelease
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation(googleDependencies.crashlytics) {
+        transitive = true
+    }
+    implementation googleDependencies.firebaseCore
+    implementation project(':lib_core_frame')
+//    implementation googleDependencies.firebaseMessaging
+//    implementation googleDependencies.firebaseInappmessagingDisplay
+//    implementation googleDependencies.firebaseInappmessagingAppindexing
+//    implementation googleDependencies.gmsTagmanager
+//    implementation googleDependencies.gmsAuth
+//    implementation googleDependencies.analytics
+//    implementation googleDependencies.guava
+//    implementation googleDependencies.flexbox
+}
+
+apply plugin: 'com.google.gms.google-services'  // Google Play services Gradle plugin
