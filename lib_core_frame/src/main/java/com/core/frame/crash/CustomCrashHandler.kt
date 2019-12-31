@@ -29,8 +29,7 @@ class CustomCrashHandler(context: Context, private val mHandler: Thread.Uncaught
         }
         if (mainthread){
             CrashDialogActivity.launch(context)
-            Process.killProcess(Process.myPid())
-            System.exit(1)
+            AppActivityManager.instance.AppExit(context)
         }
     }
 

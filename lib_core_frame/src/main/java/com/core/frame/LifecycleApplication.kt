@@ -2,11 +2,13 @@ package com.core.frame
 
 import android.app.Application
 import android.content.Context
+import android.os.Handler
 import androidx.multidex.MultiDex
 import com.blankj.utilcode.util.LogUtils
 import com.blankj.utilcode.util.Utils
 import com.core.frame.crash.AndroidCrashHandler
 import com.core.frame.manager.ActivityLifecycleManager
+import com.core.frame.manager.NetWorkStateMonitor
 
 /**
  * PackageName: com.core.frame
@@ -16,6 +18,16 @@ import com.core.frame.manager.ActivityLifecycleManager
  */
 open class LifecycleApplication : Application() {
 
+    init {
+        handler = Handler()
+    }
+
+    companion object{
+        lateinit var handler: Handler
+        lateinit var instance:LifecycleApplication
+
+    }
+
     override fun attachBaseContext(base: Context?) {
         super.attachBaseContext(base)
         MultiDex.install(this)
@@ -23,16 +35,18 @@ open class LifecycleApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
+        instance = this
         ActivityLifecycleManager.init(this)
+        AndroidCrashHandler.init(applicationContext)
+        NetWorkStateMonitor.init(this)
         Utils.init(this)
-//        AndroidCrashHandler.init(applicationContext)
-        setLogRule()
-        BuildConfig.APPLICATION_ID
+        initLogRule()
     }
 
-    private fun setLogRule() {
+    private fun initLogRule() {
         LogUtils.getConfig()
             .setLogSwitch(BuildConfig.IS_DEBUG)
             .setGlobalTag(BuildConfig.DOMAIN)
+            .setBorderSwitch(false)
     }
 }

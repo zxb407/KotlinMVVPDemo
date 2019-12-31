@@ -3,6 +3,7 @@ package com.jjshouse.kotlinmvvpdemo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.core.frame.crash.CrashDialogActivity
 import com.crashlytics.android.Crashlytics
 
 class SecondActivity : AppCompatActivity() {
@@ -13,7 +14,7 @@ class SecondActivity : AppCompatActivity() {
     }
 
     public fun forceCrash(view: View) {
-        Crashlytics.getInstance().crash()
-//        Thread(Runnable { Crashlytics.getInstance().crash() }).start()
+//        Crashlytics.getInstance().crash()
+        Thread(Runnable { Crashlytics.getInstance().crash() }).start()
     }
 }

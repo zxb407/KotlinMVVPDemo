@@ -4,6 +4,8 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'kotlin-kapt'
+
 android {
     compileSdkVersion PROJECT_BUILD.compileVersion
 
@@ -50,4 +52,23 @@ dependencies {
     api androidxDependencies.recyclerview
     api androidxDependencies.multidex
     api otherDependencies.utilcode
+    api otherDependencies.eventbus
+    api otherDependencies.localBroadcastManager
+
+    api httpDependencies.stetho
+    api httpDependencies.stethoOkhttp
+    //gson
+    api otherDependencies.fastJson
+    api otherDependencies.gson
+    //retrofit
+    api httpDependencies.retrofitConverterGson
+    api httpDependencies.retrofit2AdapterRxjava
+    //RxJava
+    api httpDependencies.rxandroid
+    api httpDependencies.rxjava2
+    //greendao
+    api dbDependencies.greendao
+
+    api otherDependencies.dagger
+    kapt otherDependencies.daggerCompile
 }

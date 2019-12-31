@@ -2,6 +2,7 @@ package com.core.frame.manager
 
 import android.app.Activity
 import android.content.Context
+import android.os.Process
 import com.blankj.utilcode.util.LogUtils
 import java.util.Stack
 
@@ -69,7 +70,7 @@ class AppActivityManager private constructor() {
     /**
      * kill all Activity
      */
-    private fun killAllActivity() {
+    fun killAllActivity() {
         var i = 0
         val size = mActivityStack!!.size
         while (i < size) {
@@ -86,11 +87,11 @@ class AppActivityManager private constructor() {
      */
     fun AppExit(context: Context) {
         try {
-            killAllActivity()
-            val activityMgr = context
-                .getSystemService(Context.ACTIVITY_SERVICE) as android.app.ActivityManager
-            activityMgr.restartPackage(context.packageName)
-            System.exit(0)
+            if (mActivityStack!!.size <= 1) {
+                killAllActivity()
+            }
+            Process.killProcess(Process.myPid())
+            System.exit(1)
         } catch (e: Exception) {
             LogUtils.vTag("AppActivityManager", "" + e)
         }
