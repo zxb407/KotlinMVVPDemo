@@ -1,7 +1,6 @@
 package com.jjshouse.kotlinmvvpdemo
 
-import android.os.Handler
-import com.core.frame.LifecycleApplication
+import com.core.frame.BaseApplication
 import com.crashlytics.android.Crashlytics
 import io.fabric.sdk.android.Fabric
 
@@ -13,11 +12,10 @@ import io.fabric.sdk.android.Fabric
  * Description:
  *
  */
-class JJApplication : LifecycleApplication() {
+class JJApplication : BaseApplication() {
 
     init {
         instance = this
-        handler = Handler()
     }
 
     override fun onCreate() {
@@ -25,12 +23,7 @@ class JJApplication : LifecycleApplication() {
         Fabric.with(this, Crashlytics()) //此处手动初始化crashlytics，firecrash -> customCrashHandler -> defaultCrashHandler
     }
 
-    fun getMainHandler(): Handler {
-        return handler
-    }
-
     companion object {
         lateinit var instance: JJApplication
-        lateinit var handler: Handler
     }
 }

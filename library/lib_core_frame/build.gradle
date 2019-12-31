@@ -1,0 +1,79 @@
+apply plugin: 'com.android.library'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+apply plugin: 'org.greenrobot.greendao'
+
+android {
+    compileSdkVersion PROJECT_BUILD.compileVersion
+
+    defaultConfig {
+        minSdkVersion PROJECT_BUILD.minSdkVersion
+        targetSdkVersion PROJECT_BUILD.targetSdkVersion
+        versionCode PROJECT_BUILD.versionCode
+        versionName PROJECT_BUILD.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled enableProguardInReleaseBuilds
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            buildConfigField "Boolean", "IS_DEBUG", RELEASE_DEBUG
+            buildConfigField "String", "DOMAIN", DOMAIN
+        }
+        preview {
+            buildConfigField "Boolean", "IS_DEBUG", PREVIEW_DEBUG
+            buildConfigField "String", "DOMAIN", DOMAIN
+        }
+        debug {
+            buildConfigField "Boolean", "IS_DEBUG", TEST_DEBUG
+            buildConfigField "String", "DOMAIN", DOMAIN
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    api androidxDependencies.appcompat
+    api androidxDependencies.coreKtx
+    api androidxDependencies.constraintlayout
+    api androidxDependencies.recyclerview
+    api androidxDependencies.multidex
+    api otherDependencies.utilcode
+    api otherDependencies.eventbus
+    api otherDependencies.localBroadcastManager
+    //gson
+    api otherDependencies.fastJson
+    api otherDependencies.gson
+    //retrofit
+    api httpDependencies.retrofitConverterJackson
+    api httpDependencies.retrofit2AdapterRxjava
+    //RxJava
+    api httpDependencies.rxandroid
+    api httpDependencies.rxjava2
+    api httpDependencies.rxbinding
+    //greendao
+    api dbDependencies.greendao
+
+    api otherDependencies.dagger
+    kapt otherDependencies.daggerCompile
+
+    api androidxDependencies.annotation
+}

@@ -101,6 +101,11 @@ android {
         }
     }
 
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+
     dexOptions {
         threadCount 2
         javaMaxHeapSize '4g'
@@ -161,6 +166,7 @@ dependencies {
         transitive = true
     }
     implementation googleDependencies.firebaseCore
+    implementation project(':lib_module_http')
     implementation project(':lib_core_frame')
 //    implementation googleDependencies.firebaseMessaging
 //    implementation googleDependencies.firebaseInappmessagingDisplay

@@ -1,3 +1,10 @@
-include ':app', ':lib_core_frame'
+include ':app'
+
+include ':lib_core_frame'
+project(':lib_core_frame').projectDir = new File('library/lib_core_frame')
+
+include ':lib_module_http'
+project(':lib_module_http').projectDir = new File('library/lib_module_http')
+
 
 
