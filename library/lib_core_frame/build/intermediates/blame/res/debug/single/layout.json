@@ -1,0 +1,210 @@
+[
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\add79d78c5d40e1d986e1511fe220d62\\res\\layout\\abc_action_menu_layout.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_up_container.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\add79d78c5d40e1d986e1511fe220d62\\res\\layout\\abc_action_bar_up_container.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\abc_tooltip.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\add79d78c5d40e1d986e1511fe220d62\\res\\layout\\abc_tooltip.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\leak_canary_heap_render.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\ed4f7faf1d117bfaa2cd94f01f58081d\\res\\layout\\leak_canary_heap_render.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\sdk_base_toolbar.xml",
+        "source": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\src\\main\\res\\layout\\sdk_base_toolbar.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\leak_canary_list.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\ed4f7faf1d117bfaa2cd94f01f58081d\\res\\layout\\leak_canary_list.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\add79d78c5d40e1d986e1511fe220d62\\res\\layout\\abc_select_dialog_material.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\leak_canary_about_screen.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\ed4f7faf1d117bfaa2cd94f01f58081d\\res\\layout\\leak_canary_about_screen.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\leak_canary_heap_dump_toast.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\ed4f7faf1d117bfaa2cd94f01f58081d\\res\\layout\\leak_canary_heap_dump_toast.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\sdk_base_toolbar_activity.xml",
+        "source": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\src\\main\\res\\layout\\sdk_base_toolbar_activity.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_header_item_layout.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\add79d78c5d40e1d986e1511fe220d62\\res\\layout\\abc_popup_menu_header_item_layout.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\08ca5d0885334f163fde1b456f6e7898\\res\\layout\\notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\leak_canary_leak_activity.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\ed4f7faf1d117bfaa2cd94f01f58081d\\res\\layout\\leak_canary_leak_activity.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\add79d78c5d40e1d986e1511fe220d62\\res\\layout\\abc_action_bar_title_item.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\leak_canary_heap_dumps_screen.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\ed4f7faf1d117bfaa2cd94f01f58081d\\res\\layout\\leak_canary_heap_dumps_screen.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_content_include.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\add79d78c5d40e1d986e1511fe220d62\\res\\layout\\abc_screen_content_include.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\abc_expanded_menu_layout.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\add79d78c5d40e1d986e1511fe220d62\\res\\layout\\abc_expanded_menu_layout.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\add79d78c5d40e1d986e1511fe220d62\\res\\layout\\abc_action_mode_bar.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\leak_canary_leak_header.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\ed4f7faf1d117bfaa2cd94f01f58081d\\res\\layout\\leak_canary_leak_header.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_radio.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\add79d78c5d40e1d986e1511fe220d62\\res\\layout\\abc_list_menu_item_radio.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\08ca5d0885334f163fde1b456f6e7898\\res\\layout\\notification_template_part_time.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\add79d78c5d40e1d986e1511fe220d62\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\add79d78c5d40e1d986e1511fe220d62\\res\\layout\\abc_action_menu_item_layout.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_button_bar_material.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\add79d78c5d40e1d986e1511fe220d62\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\leak_canary_ref_row.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\ed4f7faf1d117bfaa2cd94f01f58081d\\res\\layout\\leak_canary_ref_row.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_material.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\add79d78c5d40e1d986e1511fe220d62\\res\\layout\\abc_alert_dialog_material.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\abc_cascading_menu_item_layout.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\add79d78c5d40e1d986e1511fe220d62\\res\\layout\\abc_cascading_menu_item_layout.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\add79d78c5d40e1d986e1511fe220d62\\res\\layout\\abc_list_menu_item_layout.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\add79d78c5d40e1d986e1511fe220d62\\res\\layout\\support_simple_spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\add79d78c5d40e1d986e1511fe220d62\\res\\layout\\abc_screen_simple.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\leak_canary_leak_screen.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\ed4f7faf1d117bfaa2cd94f01f58081d\\res\\layout\\leak_canary_leak_screen.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\leak_canary_heap_dump_leak_title.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\ed4f7faf1d117bfaa2cd94f01f58081d\\res\\layout\\leak_canary_heap_dump_leak_title.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view_list_item.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\add79d78c5d40e1d986e1511fe220d62\\res\\layout\\abc_activity_chooser_view_list_item.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\add79d78c5d40e1d986e1511fe220d62\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_view.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\add79d78c5d40e1d986e1511fe220d62\\res\\layout\\abc_search_view.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\add79d78c5d40e1d986e1511fe220d62\\res\\layout\\abc_list_menu_item_icon.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_multichoice_material.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\add79d78c5d40e1d986e1511fe220d62\\res\\layout\\select_dialog_multichoice_material.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\add79d78c5d40e1d986e1511fe220d62\\res\\layout\\abc_list_menu_item_checkbox.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_singlechoice_material.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\add79d78c5d40e1d986e1511fe220d62\\res\\layout\\select_dialog_singlechoice_material.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_close_item_material.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\add79d78c5d40e1d986e1511fe220d62\\res\\layout\\abc_action_mode_close_item_material.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\leak_canary_leak_chips.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\ed4f7faf1d117bfaa2cd94f01f58081d\\res\\layout\\leak_canary_leak_chips.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\add79d78c5d40e1d986e1511fe220d62\\res\\layout\\abc_activity_chooser_view.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_item_material.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\add79d78c5d40e1d986e1511fe220d62\\res\\layout\\select_dialog_item_material.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\leak_canary_simple_row.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\ed4f7faf1d117bfaa2cd94f01f58081d\\res\\layout\\leak_canary_simple_row.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_title_material.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\add79d78c5d40e1d986e1511fe220d62\\res\\layout\\abc_alert_dialog_title_material.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\leak_canary_heap_analysis_failure_screen.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\ed4f7faf1d117bfaa2cd94f01f58081d\\res\\layout\\leak_canary_heap_analysis_failure_screen.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\leak_canary_leak_row.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\ed4f7faf1d117bfaa2cd94f01f58081d\\res\\layout\\leak_canary_leak_row.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_item_layout.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\add79d78c5d40e1d986e1511fe220d62\\res\\layout\\abc_popup_menu_item_layout.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_toolbar.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\add79d78c5d40e1d986e1511fe220d62\\res\\layout\\abc_screen_toolbar.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\add79d78c5d40e1d986e1511fe220d62\\res\\layout\\abc_dialog_title_material.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\custom_dialog.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\08ca5d0885334f163fde1b456f6e7898\\res\\layout\\custom_dialog.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout\\leak_canary_hprof_explorer.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\ed4f7faf1d117bfaa2cd94f01f58081d\\res\\layout\\leak_canary_hprof_explorer.xml"
+    }
+]

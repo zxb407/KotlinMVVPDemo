@@ -5,7 +5,7 @@ import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
 import android.util.Log
-import com.core.frame.BaseApplication
+import com.core.frame.app.BaseApplication
 
 object NetworkUtils {
 

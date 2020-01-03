@@ -38,7 +38,7 @@ abstract class MToolbarActivity : MActivity() {
     abstract fun useDefaultToolBar(): Boolean
 
     override fun setContentView(view: View?, params: ViewGroup.LayoutParams?) {
-        if (useDefaultToolBar()) {
+        if (true) {
             val rootView = onCreateToolbarLayout(layoutInflater)
             val contentView = rootView.findViewById<View>(R.id.root) as ViewGroup
             if (null != contentView) {

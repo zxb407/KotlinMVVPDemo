@@ -1,6 +1,6 @@
 package org.cchao.http.db;
 
-import com.core.frame.BaseApplication;
+import com.core.frame.app.BaseApplication;
 import org.greenrobot.greendao.database.Database;
 import org.greenrobot.greendao.query.QueryBuilder;
 

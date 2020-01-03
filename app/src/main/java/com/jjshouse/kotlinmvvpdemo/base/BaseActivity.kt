@@ -8,11 +8,15 @@ import android.os.Bundle
 import android.provider.Settings
 import android.view.*
 import android.widget.ImageButton
-import androidx.appcompat.app.AppCompatActivity
 import com.core.frame.base.MToolbarActivity
 import com.core.frame.model.NetWorkChangeEvent
 import com.core.frame.utils.UIUtils
 import com.jjshouse.kotlinmvvpdemo.R
+import com.jjshouse.kotlinmvvpdemo.di.component.ActivityComponent
+import com.jjshouse.kotlinmvvpdemo.di.component.DaggerActivityComponent
+import com.jjshouse.kotlinmvvpdemo.di.module.ActivityModule
+import com.jjshouse.kotlinmvvpdemo.utils.AppUtils
+import org.cchao.kotlintemplate.expansion.getAppComponent
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
@@ -23,19 +27,26 @@ import org.greenrobot.eventbus.ThreadMode
  * Description:
  *
  */
-abstract class BaseActivity : MToolbarActivity() {
+abstract class BaseActivity : MToolbarActivity(){
 
     private var backPressedListener: BackPressedListener? = null
+    lateinit var activityComponentBuilder: DaggerActivityComponent.Builder
 
-    /**
-     * User can override the default ToolbarLayout {@link sdk_base_toolbar_activity}
-     *
-     */
-    override fun onCreateToolbarLayout(inflater: LayoutInflater): ViewGroup {
-        return super.onCreateToolbarLayout(inflater)
+    override fun attachBaseContext(newBase: Context) {
+        super.attachBaseContext(JJContextWrapper.wrap(newBase, AppUtils.getUserLanguage()))
     }
 
+//    /**
+//     * User can override the default ToolbarLayout {@link sdk_base_toolbar_activity}
+//     *
+//     */
+//    override fun onCreateToolbarLayout(inflater: LayoutInflater): ViewGroup {
+//        return super.onCreateToolbarLayout(inflater)
+//    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        initComponentBuilder()
+        inject()
         super.onCreate(savedInstanceState)
         EventBus.getDefault().register(this)
         initLayout()
@@ -46,6 +57,17 @@ abstract class BaseActivity : MToolbarActivity() {
         initEvent()
         initData()
     }
+
+    open fun initComponentBuilder() {
+        activityComponentBuilder = DaggerActivityComponent.builder().activityModule(ActivityModule(this))
+            .appComponent(getAppComponent())
+    }
+
+    fun getInjector(): ActivityComponent {
+        return activityComponentBuilder.build()
+    }
+
+    abstract fun inject()
 
     abstract fun initLayout()
 

@@ -4,6 +4,8 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'kotlin-kapt'
+
 apply plugin: 'io.fabric'
 
 def keystorePropertiesFile = rootProject.file("keystore.properties")
@@ -176,6 +178,10 @@ dependencies {
 //    implementation googleDependencies.analytics
 //    implementation googleDependencies.guava
 //    implementation googleDependencies.flexbox
+    implementation otherDependencies.dagger
+    kapt  otherDependencies.daggerCompile
+    implementation otherDependencies.skeleton
+    implementation otherDependencies.shimmerlayout
 }
 
 apply plugin: 'com.google.gms.google-services'  // Google Play services Gradle plugin

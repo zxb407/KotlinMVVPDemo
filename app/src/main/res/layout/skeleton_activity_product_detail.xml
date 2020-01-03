@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="13dp">
+
+    <View
+        android:id="@+id/tv_price"
+        android:layout_width="0dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="16dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintEnd_toStartOf="@+id/ic_share"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/ic_share"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_price"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/tv_name"
+        android:layout_width="0dp"
+        android:layout_height="14dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="11dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintEnd_toStartOf="@+id/rateing"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_price" />
+
+    <View
+        android:id="@+id/rateing"
+        android:layout_width="80dp"
+        android:layout_height="14dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_name"
+        app:layout_constraintTop_toTopOf="@+id/tv_name" />
+
+    <View
+        android:id="@+id/line_1"
+        android:layout_width="0dp"
+        android:layout_height="10dp"
+        android:layout_marginStart="-16dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="-16dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+    <View
+        android:id="@+id/color_name"
+        android:layout_width="73dp"
+        android:layout_height="17dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="13dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/line_1" />
+
+    <View
+        android:id="@+id/color_block1"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="13dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/color_name" />
+
+    <View
+        android:id="@+id/color_block2"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="13dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintStart_toEndOf="@id/color_block1"
+        app:layout_constraintTop_toBottomOf="@id/color_name" />
+
+    <View
+        android:id="@+id/color_block3"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="13dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintStart_toEndOf="@id/color_block2"
+        app:layout_constraintTop_toBottomOf="@id/color_name" />
+
+    <View
+        android:id="@+id/color_block4"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="13dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintStart_toEndOf="@id/color_block3"
+        app:layout_constraintTop_toBottomOf="@id/color_name" />
+
+    <View
+        android:id="@+id/size_name"
+        android:layout_width="45dp"
+        android:layout_height="17dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="13dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/color_block1" />
+
+    <View
+        android:id="@+id/size_block1"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="13dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/size_name" />
+
+    <View
+        android:id="@+id/size_block2"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="13dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintStart_toEndOf="@id/size_block1"
+        app:layout_constraintTop_toBottomOf="@id/size_name" />
+
+    <View
+        android:id="@+id/size_block3"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="13dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintStart_toEndOf="@id/size_block2"
+        app:layout_constraintTop_toBottomOf="@id/size_name" />
+
+    <View
+        android:id="@+id/size_block4"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="13dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintStart_toEndOf="@id/size_block3"
+        app:layout_constraintTop_toBottomOf="@id/size_name" />
+
+    <View
+        android:id="@+id/size_block5"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="13dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintStart_toEndOf="@id/size_block4"
+        app:layout_constraintTop_toBottomOf="@id/size_name" />
+
+    <View
+        android:id="@+id/size_block6"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="13dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintStart_toEndOf="@id/size_block5"
+        app:layout_constraintTop_toBottomOf="@id/size_name" />
+
+    <View
+        android:id="@+id/line_2"
+        android:layout_width="0dp"
+        android:layout_height="10dp"
+        android:layout_marginTop="30dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/size_block1" />
+
+    <View
+        android:id="@+id/free_shipping"
+        android:layout_width="0dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="106dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/line_2" />
+
+    <View
+        android:id="@+id/coupon_available"
+        android:layout_width="0dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintEnd_toStartOf="@+id/coupon_arrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/free_shipping" />
+
+    <View
+        android:id="@+id/coupon_arrow"
+        android:layout_width="70dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/coupon_available"
+        app:layout_constraintTop_toBottomOf="@id/free_shipping" />
+
+    <View
+        android:id="@+id/line_3"
+        android:layout_width="0dp"
+        android:layout_height="10dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/coupon_available" />
+
+    <View
+        android:id="@+id/details"
+        android:layout_width="60dp"
+        android:layout_height="13dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/line_3" />
+
+    <View
+        android:id="@+id/line_4"
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="16dp"
+        android:background="#e6e6e6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/details" />
+
+    <View
+        android:id="@+id/detail_item1"
+        android:layout_width="0dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/product_item_border_v1"
+        android:orientation="horizontal"
+        android:paddingStart="1dp"
+        android:paddingEnd="1dp"
+        android:paddingBottom="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/line_4" />
+
+    <View
+        android:id="@+id/detail_item2"
+        android:layout_width="0dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/product_item_border_v1"
+        android:orientation="horizontal"
+        android:paddingStart="1dp"
+        android:paddingEnd="1dp"
+        android:paddingBottom="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detail_item1" />
+
+    <View
+        android:id="@+id/detail_item3"
+        android:layout_width="0dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/product_item_border_v1"
+        android:orientation="horizontal"
+        android:paddingStart="1dp"
+        android:paddingEnd="1dp"
+        android:paddingBottom="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detail_item2" />
+
+    <View
+        android:id="@+id/detail_item4"
+        android:layout_width="0dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/product_item_border_v1"
+        android:orientation="horizontal"
+        android:paddingStart="1dp"
+        android:paddingEnd="1dp"
+        android:paddingBottom="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detail_item3" />
+
+    <View
+        android:id="@+id/item_key_1"
+        android:layout_width="120dp"
+        android:layout_height="12dp"
+        android:layout_marginStart="16dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintBottom_toBottomOf="@id/detail_item1"
+        app:layout_constraintEnd_toStartOf="@+id/item_value_1"
+        app:layout_constraintStart_toStartOf="@+id/detail_item1"
+        app:layout_constraintTop_toTopOf="@+id/detail_item1" />
+
+    <View
+        android:id="@+id/item_value_1"
+        android:layout_width="0dp"
+        android:layout_height="12dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintBottom_toBottomOf="@id/detail_item1"
+        app:layout_constraintEnd_toEndOf="@id/detail_item1"
+        app:layout_constraintStart_toEndOf="@+id/item_key_1"
+        app:layout_constraintTop_toTopOf="@id/detail_item1" />
+
+    <View
+        android:id="@+id/item_key_2"
+        android:layout_width="120dp"
+        android:layout_height="12dp"
+        android:layout_marginStart="16dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintBottom_toBottomOf="@id/detail_item2"
+        app:layout_constraintEnd_toStartOf="@+id/item_value_2"
+        app:layout_constraintStart_toStartOf="@+id/detail_item2"
+        app:layout_constraintTop_toTopOf="@+id/detail_item2" />
+
+    <View
+        android:id="@+id/item_value_2"
+        android:layout_width="0dp"
+        android:layout_height="12dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintBottom_toBottomOf="@id/detail_item2"
+        app:layout_constraintEnd_toEndOf="@id/detail_item2"
+        app:layout_constraintStart_toEndOf="@+id/item_key_2"
+        app:layout_constraintTop_toTopOf="@id/detail_item2" />
+
+    <View
+        android:id="@+id/item_key_3"
+        android:layout_width="120dp"
+        android:layout_height="12dp"
+        android:layout_marginStart="16dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintBottom_toBottomOf="@id/detail_item3"
+        app:layout_constraintEnd_toStartOf="@+id/item_value_3"
+        app:layout_constraintStart_toStartOf="@+id/detail_item3"
+        app:layout_constraintTop_toTopOf="@+id/detail_item3" />
+
+    <View
+        android:id="@+id/item_value_3"
+        android:layout_width="0dp"
+        android:layout_height="12dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintBottom_toBottomOf="@id/detail_item3"
+        app:layout_constraintEnd_toEndOf="@id/detail_item3"
+        app:layout_constraintStart_toEndOf="@+id/item_key_3"
+        app:layout_constraintTop_toTopOf="@id/detail_item3" />
+
+    <View
+        android:id="@+id/item_key_4"
+        android:layout_width="120dp"
+        android:layout_height="12dp"
+        android:layout_marginStart="16dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintBottom_toBottomOf="@id/detail_item4"
+        app:layout_constraintEnd_toStartOf="@+id/item_value_4"
+        app:layout_constraintStart_toStartOf="@+id/detail_item4"
+        app:layout_constraintTop_toTopOf="@+id/detail_item4" />
+
+    <View
+        android:id="@+id/item_value_4"
+        android:layout_width="0dp"
+        android:layout_height="12dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/light_transparent"
+        app:layout_constraintBottom_toBottomOf="@id/detail_item4"
+        app:layout_constraintEnd_toEndOf="@id/detail_item4"
+        app:layout_constraintStart_toEndOf="@+id/item_key_4"
+        app:layout_constraintTop_toTopOf="@id/detail_item4" />
+</androidx.constraintlayout.widget.ConstraintLayout>

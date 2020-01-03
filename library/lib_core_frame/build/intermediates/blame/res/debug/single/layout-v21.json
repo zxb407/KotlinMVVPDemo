@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_custom_big.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\08ca5d0885334f163fde1b456f6e7898\\res\\layout-v21\\notification_template_custom_big.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_icon_group.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\08ca5d0885334f163fde1b456f6e7898\\res\\layout-v21\\notification_template_icon_group.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\08ca5d0885334f163fde1b456f6e7898\\res\\layout-v21\\notification_action.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action_tombstone.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\08ca5d0885334f163fde1b456f6e7898\\res\\layout-v21\\notification_action_tombstone.xml"
+    }
+]

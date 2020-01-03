@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">KotlinMVVPDemo</string>
     <string name="no_internet_connection">No internet connection</string>
+    <string name="network_error_occured">Network error occurred. Please check your internet connection and try again.</string>
+    <string name="try_again">Please try again</string>
+    <string name="it_is_empty_here">It is empty here:-(</string>
 </resources>

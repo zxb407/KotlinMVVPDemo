@@ -7,7 +7,7 @@ import android.content.IntentFilter
 import android.net.*
 import android.net.wifi.WifiManager
 import android.os.Build
-import com.core.frame.BaseApplication
+import com.core.frame.app.BaseApplication
 import com.core.frame.Variables
 import com.core.frame.broadcast.NetworkConnectChangedReceiver
 import com.core.frame.model.NetWorkChangeEvent

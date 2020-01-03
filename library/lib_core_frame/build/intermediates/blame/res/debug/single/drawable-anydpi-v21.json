@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\leak_canary_dump.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\ed4f7faf1d117bfaa2cd94f01f58081d\\res\\drawable-anydpi-v21\\leak_canary_dump.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\leak_canary_leak.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\ed4f7faf1d117bfaa2cd94f01f58081d\\res\\drawable-anydpi-v21\\leak_canary_leak.xml"
+    },
+    {
+        "merged": "D:\\KotlinMVVPDemo\\library\\lib_core_frame\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\leak_canary_info.xml",
+        "source": "C:\\Users\\xbzhang\\.gradle\\caches\\transforms-2\\files-2.1\\ed4f7faf1d117bfaa2cd94f01f58081d\\res\\drawable-anydpi-v21\\leak_canary_info.xml"
+    }
+]

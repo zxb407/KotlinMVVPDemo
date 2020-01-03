@@ -2,6 +2,7 @@ package org.cchao.kotlintemplate.expansion
 
 import android.content.Context
 import com.core.frame.utils.NetworkUtils
+import com.jjshouse.kotlinmvvpdemo.JJApplication
 
 
 /**
@@ -10,4 +11,6 @@ import com.core.frame.utils.NetworkUtils
 fun Context.isConnected(): Boolean {
     return NetworkUtils.isConnected()
 }
+
+fun Context.getAppComponent() = JJApplication.instance.appComponent
 

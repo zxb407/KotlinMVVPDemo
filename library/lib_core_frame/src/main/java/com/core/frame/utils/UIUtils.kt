@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.res.Resources
 import android.os.Handler
 import android.view.View
-import com.core.frame.BaseApplication
+import com.core.frame.app.BaseApplication
 
 /**
  * **Create Date:** 2018/3/5<br></br>

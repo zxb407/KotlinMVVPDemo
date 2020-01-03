@@ -1,10 +1,8 @@
 apply plugin: 'com.android.library'
 
-apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
 
-apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android'
 
 apply plugin: 'org.greenrobot.greendao'
 
@@ -43,6 +41,10 @@ android {
         sourceCompatibility 1.8
         targetCompatibility 1.8
     }
+
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
@@ -72,8 +74,7 @@ dependencies {
     //greendao
     api dbDependencies.greendao
 
-    api otherDependencies.dagger
-    kapt otherDependencies.daggerCompile
-
     api androidxDependencies.annotation
+    api otherDependencies.rxpermission
+    debugApi canaryDependencies.leakcanary
 }
