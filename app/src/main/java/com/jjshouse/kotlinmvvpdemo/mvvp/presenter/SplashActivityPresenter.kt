@@ -19,7 +19,7 @@ import javax.inject.Inject
 class SplashActivityPresenter @Inject constructor(view: BaseView) :
     BasePresenterImpl<SplashActivityContract.View>(view), SplashActivityContract.Presenter {
     override fun getStartPage() {
-        HttpUtils.getBaseData(GetStartPageBody(), StartPageBean::class.java,false).subscribe({
+        HttpUtils.getBaseData(GetStartPageBody(), StartPageBean::class.java,true).subscribe({
             when(it.code){
                 HttpResponseModel.CODE_SUCCESS -> getPresenterView()?.onGetDataSuccess(it.data!!)
                 else -> getPresenterView()?.onGetDataError(it.msg)

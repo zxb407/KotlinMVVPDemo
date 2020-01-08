@@ -6,9 +6,12 @@ import android.os.Handler
 import android.os.Message
 import android.text.TextUtils
 import android.view.View
+import android.view.animation.AlphaAnimation
 import com.blankj.utilcode.util.ScreenUtils
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.target.SimpleTarget
+import com.bumptech.glide.request.transition.DrawableCrossFadeTransition
 import com.bumptech.glide.request.transition.Transition
 import com.core.frame.utils.jsonutils.JsonUtils
 import com.jjshouse.kotlinmvvpdemo.MainActivity
@@ -29,7 +32,7 @@ import org.cchao.kotlintemplate.expansion.setBaseUrl
  * Created by xbzhang on 2019/1/8
  * Description: 开机图Activity, 启动入口
  */
-class SplashActivity : BaseMvpActivity<SplashActivityPresenter>(),SplashActivityContract.View, Handler.Callback {
+class SplashActivity : BaseMvpActivity<SplashActivityPresenter>(), SplashActivityContract.View, Handler.Callback {
 
     private val WHAT_CLOSE = 1
     private val WHAT_COUNTDOWN = 2
@@ -37,9 +40,10 @@ class SplashActivity : BaseMvpActivity<SplashActivityPresenter>(),SplashActivity
     private lateinit var mHandler: Handler
     private var disposable: Disposable? = null
     private var messageBean: MessageBean? = null
+    private var doAnimation = false
 
     override fun getSuccessView(): View {
-        return View.inflate(this,R.layout.layout_activity_splash,null)
+        return View.inflate(this, R.layout.layout_activity_splash, null)
     }
 
     override fun inject() {
@@ -91,9 +95,8 @@ class SplashActivity : BaseMvpActivity<SplashActivityPresenter>(),SplashActivity
             finish()
             return false
         }
-        tv_splash_jump.text = String.format(resources.getString(R.string.splash_jump), time.toString())
-        time--
         if (time > 0) {
+            tv_splash_jump.text = String.format(resources.getString(R.string.splash_jump), time.toString())
             mHandler.sendEmptyMessageDelayed(WHAT_COUNTDOWN, 1000)
         } else {
             val intent = Intent(this@SplashActivity, MainActivity::class.java)
@@ -103,25 +106,40 @@ class SplashActivity : BaseMvpActivity<SplashActivityPresenter>(),SplashActivity
             startActivity(intent)
             finish()
         }
+        time--
         return false
     }
 
     override fun onGetDataSuccess(t: StartPageBean) {
         var imgUrl = handleImageUrl(t.img_url ?: "")
-        Glide.with(this@SplashActivity).load(URLManager.getImageUrl(imgUrl)).into(object : SimpleTarget<Drawable>() {
-            override fun onResourceReady(resource: Drawable, transition: Transition<in Drawable>?) {
-                iv_splash.setImageDrawable(resource)
-                mHandler.removeMessages(WHAT_CLOSE)
-                mHandler.sendEmptyMessage(WHAT_COUNTDOWN)
-                tv_splash_jump.visibility = View.VISIBLE
-            }
-        })
+        Glide.with(this@SplashActivity).load(URLManager.getImageUrl(imgUrl))
+            .transition(DrawableTransitionOptions.withCrossFade())
+            .into(object : SimpleTarget<Drawable>() {
+                override fun onResourceReady(resource: Drawable, transition: Transition<in Drawable>?) {
+                    iv_splash.setImageDrawable(resource)
+                    startAlphaAnimation()
+                    mHandler.removeMessages(WHAT_CLOSE)
+                    mHandler.removeMessages(WHAT_COUNTDOWN)
+                    mHandler.sendEmptyMessage(WHAT_COUNTDOWN)
+                    tv_splash_jump.visibility = View.VISIBLE
+                }
+            })
+    }
+
+    private fun startAlphaAnimation() {
+        if (!doAnimation) {
+            var animation = AlphaAnimation(0f, 1f)
+            animation.duration = 800
+            iv_splash.startAnimation(animation)
+            doAnimation = true
+        }
     }
 
     override fun onGetDataError(msg: String) {
         Glide.with(this@SplashActivity).load(R.drawable.ic_splash_bg).into(object : SimpleTarget<Drawable>() {
             override fun onResourceReady(resource: Drawable, transition: Transition<in Drawable>?) {
                 iv_splash.setImageDrawable(resource)
+                startAlphaAnimation()
                 mHandler.removeMessages(WHAT_CLOSE)
                 mHandler.sendEmptyMessage(WHAT_COUNTDOWN)
                 tv_splash_jump.visibility = View.VISIBLE
@@ -132,7 +150,9 @@ class SplashActivity : BaseMvpActivity<SplashActivityPresenter>(),SplashActivity
     private fun handleImageUrl(s: String): String {
         if (TextUtils.isEmpty(s)) return ""
         var imgUrl = s
-        var ratio = UtilsBigDecimal.div(ScreenUtils.getScreenHeight().toDouble(), ScreenUtils.getScreenWidth().toDouble()).toFloat()
+        var ratio =
+            UtilsBigDecimal.div(ScreenUtils.getScreenHeight().toDouble(), ScreenUtils.getScreenWidth().toDouble())
+                .toFloat()
         imgUrl = if (ratio > 0 && ratio <= 1.78f) {
             imgUrl.replace(Regex("boot_[^.]*"), "boot_1")
         } else if (ratio > 1.78f && ratio <= 2.06) {

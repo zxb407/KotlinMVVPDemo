@@ -80,7 +80,7 @@ public class HttpUtils {
                     HttpResponseModel<T> responseModel = new HttpResponseModel<>();
                     responseModel.setMsg(objectHttpResponseModel.getMsg());
                     responseModel.setCode(objectHttpResponseModel.getCode());
-                    responseModel.setData(JsonUtils.fromJson(objectHttpResponseModel.getData().toString(), classType));
+                    responseModel.setData(JsonUtils.fromJson(JsonUtils.toString(objectHttpResponseModel.getData()), classType));
                     return responseModel;
                 })
                 .doOnError(new DeleteCacheConsumer(httpRequestBody, isCache));

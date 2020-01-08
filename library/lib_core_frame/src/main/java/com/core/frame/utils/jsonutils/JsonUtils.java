@@ -58,6 +58,7 @@ public class JsonUtils {
      * @return json string.
      */
     public static String toString(Object jsonObject) {
+        if (jsonObject instanceof String) return (String) jsonObject;
         return SingletonHolder.INSTANCE.toJson(jsonObject);
     }
 
