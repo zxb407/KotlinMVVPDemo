@@ -1,7 +1,7 @@
 package org.cchao.http;
 
-import com.core.frame.utils.JsonUtils;
 import com.core.frame.utils.Md5Utils;
+import com.core.frame.utils.jsonutils.JsonUtils;
 import org.cchao.http.db.CacheDbUtils;
 import org.cchao.http.db.CacheModel;
 

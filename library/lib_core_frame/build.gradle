@@ -6,6 +6,8 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'org.greenrobot.greendao'
 
+apply plugin: 'kotlin-kapt'
+
 android {
     compileSdkVersion PROJECT_BUILD.compileVersion
 

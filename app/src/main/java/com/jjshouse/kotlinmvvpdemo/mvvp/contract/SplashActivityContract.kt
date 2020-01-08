@@ -1,7 +1,6 @@
 package com.jjshouse.kotlinmvvpdemo.mvvp.contract
 
-import com.jjshouse.kotlinmvvpdemo.model.databean.HomeDataBean
-import com.jjshouse.kotlinmvvpdemo.model.databean.StartPageBean
+import com.jjshouse.kotlinmvvpdemo.model.StartPageBean
 import org.cchao.kotlintemplate.ui.base.BasePresenter
 import org.cchao.kotlintemplate.ui.base.BaseView
 

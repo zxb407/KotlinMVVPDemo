@@ -1,6 +1,6 @@
 package com.jjshouse.kotlinmvvpdemo.mvvp.presenter
 
-import com.jjshouse.kotlinmvvpdemo.model.databean.StartPageBean
+import com.jjshouse.kotlinmvvpdemo.model.StartPageBean
 import com.jjshouse.kotlinmvvpdemo.model.httprequestbody.GetStartPageBody
 import com.jjshouse.kotlinmvvpdemo.mvvp.contract.SplashActivityContract
 import org.cchao.http.HttpResponseModel
@@ -19,9 +19,9 @@ import javax.inject.Inject
 class SplashActivityPresenter @Inject constructor(view: BaseView) :
     BasePresenterImpl<SplashActivityContract.View>(view), SplashActivityContract.Presenter {
     override fun getStartPage() {
-        HttpUtils.getBaseData(GetStartPageBody(),StartPageBean::class.java).subscribe({
+        HttpUtils.getBaseData(GetStartPageBody(), StartPageBean::class.java,false).subscribe({
             when(it.code){
-                HttpResponseModel.CODE_SUCCESS -> getPresenterView()?.onGetDataSuccess(it.data)
+                HttpResponseModel.CODE_SUCCESS -> getPresenterView()?.onGetDataSuccess(it.data!!)
                 else -> getPresenterView()?.onGetDataError(it.msg)
             }
 

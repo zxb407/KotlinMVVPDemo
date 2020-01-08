@@ -1,9 +1,9 @@
 package org.cchao.http;
 
 import com.core.frame.app.BaseApplication;
-import com.core.frame.utils.JsonUtils;
 import com.core.frame.utils.Md5Utils;
 import com.core.frame.utils.NetworkUtils;
+import com.core.frame.utils.jsonutils.JsonUtils;
 import org.cchao.http.api.Api;
 import org.cchao.http.db.CacheDbUtils;
 import org.cchao.http.db.CacheModel;
@@ -63,14 +63,14 @@ public class HttpUtils {
     public static <T> Observable<T> getData(final HttpRequestBody httpRequestBody, final Class<T> classType, final boolean isCache) {
         return processData(httpRequestBody, isCache)
                 .flatMap(HttpUtils::flatResponse)
-                .map(o -> JsonUtils.fromJson(String.valueOf(o), classType))
+                .map(o -> JsonUtils.fromJson(JsonUtils.toString(o), classType))
                 .doOnError(new DeleteCacheConsumer(httpRequestBody, isCache));
     }
 
     public static <T> Observable<List<T>> getDataList(final HttpRequestBody httpRequestBody, final Class<T> classType, boolean isCache) {
         return processData(httpRequestBody, isCache)
                 .flatMap(HttpUtils::flatResponse)
-                .map(o -> JsonUtils.toList(String.valueOf(o), classType))
+                .map(o -> JsonUtils.toList(JsonUtils.toString(o), classType))
                 .doOnError(new DeleteCacheConsumer(httpRequestBody, isCache));
     }
 
@@ -80,7 +80,7 @@ public class HttpUtils {
                     HttpResponseModel<T> responseModel = new HttpResponseModel<>();
                     responseModel.setMsg(objectHttpResponseModel.getMsg());
                     responseModel.setCode(objectHttpResponseModel.getCode());
-                    responseModel.setData(JsonUtils.fromJson(String.valueOf(objectHttpResponseModel.getData()), classType));
+                    responseModel.setData(JsonUtils.fromJson(objectHttpResponseModel.getData().toString(), classType));
                     return responseModel;
                 })
                 .doOnError(new DeleteCacheConsumer(httpRequestBody, isCache));
@@ -103,11 +103,11 @@ public class HttpUtils {
         if (!NetworkUtils.INSTANCE.isConnected()) {
             String toastStr = BaseApplication.instance.getResources().getString(R.string.no_internet_connection);
             if (!isCache) {
-                return Observable.error(new ApiException(HttpResponseModel.CODE_ERROR, toastStr));
+                return Observable.error(new ApiException(HttpResponseModel.Companion.getCODE_ERROR(), toastStr));
             }
-            HttpResponseModel<Object> objectHttpResponseModel = getCacheResponse(httpRequestBody, new ApiException(HttpResponseModel.CODE_ERROR, toastStr), isCache);
+            HttpResponseModel<Object> objectHttpResponseModel = getCacheResponse(httpRequestBody, new ApiException(HttpResponseModel.Companion.getCODE_ERROR(), toastStr), isCache);
             if (null == objectHttpResponseModel.getData()) {
-                return Observable.error(new ApiException(HttpResponseModel.CODE_ERROR, toastStr));
+                return Observable.error(new ApiException(HttpResponseModel.Companion.getCODE_ERROR(), toastStr));
             }
             return Observable.just(objectHttpResponseModel);
         }
@@ -141,7 +141,7 @@ public class HttpUtils {
                 .onErrorResumeNext(throwable -> {
                     HttpResponseModel<Object> objectHttpResponseModel = getCacheResponse(httpRequestBody, throwable, isCache);
                     if (null == objectHttpResponseModel.getData()) {
-                        return Observable.error(new ApiException(HttpResponseModel.CODE_ERROR, throwable.getMessage()));
+                        return Observable.error(new ApiException(HttpResponseModel.Companion.getCODE_ERROR(), throwable.getMessage()));
                     }
                     return Observable.just(objectHttpResponseModel);
                 });

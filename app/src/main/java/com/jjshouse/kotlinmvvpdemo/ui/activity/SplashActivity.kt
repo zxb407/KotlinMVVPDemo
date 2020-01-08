@@ -10,20 +10,19 @@ import com.blankj.utilcode.util.ScreenUtils
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.SimpleTarget
 import com.bumptech.glide.request.transition.Transition
-import com.core.frame.utils.JsonUtils
+import com.core.frame.utils.jsonutils.JsonUtils
 import com.jjshouse.kotlinmvvpdemo.MainActivity
 import com.jjshouse.kotlinmvvpdemo.R
 import com.jjshouse.kotlinmvvpdemo.base.BaseMvpActivity
 import com.jjshouse.kotlinmvvpdemo.handle.URLManager
 import com.jjshouse.kotlinmvvpdemo.model.databean.MessageBean
-import com.jjshouse.kotlinmvvpdemo.model.databean.StartPageBean
+import com.jjshouse.kotlinmvvpdemo.model.StartPageBean
 import com.jjshouse.kotlinmvvpdemo.mvvp.contract.SplashActivityContract
 import com.jjshouse.kotlinmvvpdemo.mvvp.presenter.SplashActivityPresenter
 import com.jjshouse.kotlinmvvpdemo.utils.UtilsBigDecimal
 import io.reactivex.disposables.Disposable
 import kotlinx.android.synthetic.main.layout_activity_splash.*
 import org.cchao.kotlintemplate.expansion.setBaseUrl
-import org.cchao.kotlintemplate.expansion.setFullscreen
 
 /**
  * PackageName: com.dding.mvpdemo.ui.activity
