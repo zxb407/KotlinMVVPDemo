@@ -4,4 +4,5 @@
     <string name="network_error_occured">Network error occurred. Please check your internet connection and try again.</string>
     <string name="try_again">Please try again</string>
     <string name="it_is_empty_here">It is empty here:-(</string>
+    <string name="splash_jump">SKIP \%s</string>
 </resources>

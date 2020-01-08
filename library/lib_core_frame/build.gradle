@@ -73,6 +73,7 @@ dependencies {
     api httpDependencies.rxbinding
     //greendao
     api dbDependencies.greendao
+    api httpDependencies.okhttp3_logging
 
     api androidxDependencies.annotation
     api otherDependencies.rxpermission

@@ -10,9 +10,11 @@ import android.os.Bundle
 import android.provider.Settings
 import android.view.View
 import com.blankj.utilcode.util.LogUtils
+import com.bumptech.glide.Glide
 import com.core.frame.Variables
 import com.core.frame.base.MToolbarActivity
 import com.core.frame.model.NetWorkChangeEvent
+import com.jjshouse.kotlinmvvpdemo.utils.glideutils.GlideUtil
 import com.tbruyelle.rxpermissions2.RxPermissions
 import kotlinx.android.synthetic.main.activity_main.*
 import org.greenrobot.eventbus.EventBus
@@ -20,6 +22,10 @@ import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 
 class MainActivity : MToolbarActivity(), View.OnClickListener {
+
+    companion object{
+        const val KEY_PUSH = "key_push"
+    }
 
     private var mDialog: Dialog? = null
 
@@ -43,6 +49,7 @@ class MainActivity : MToolbarActivity(), View.OnClickListener {
     @SuppressLint("CheckResult")
     private fun initEvent() {
         bt_jump.setOnClickListener(this)
+
     }
 
     private fun showTip(type: Int) {
@@ -96,8 +103,6 @@ class MainActivity : MToolbarActivity(), View.OnClickListener {
     override fun onClick(v: View) {
         when (v.id) {
             R.id.bt_jump -> {
-//                ToastUtils.showLong("adfefefe")
-//                startActivity(Intent(this@MainActivity, SecondActivity::class.java))
                 RxPermissions(this@MainActivity)
                     .requestEachCombined(Manifest.permission.WRITE_EXTERNAL_STORAGE)
                     .subscribe {
@@ -116,7 +121,6 @@ class MainActivity : MToolbarActivity(), View.OnClickListener {
                                 }
                             }
                     }
-
             }
         }
 

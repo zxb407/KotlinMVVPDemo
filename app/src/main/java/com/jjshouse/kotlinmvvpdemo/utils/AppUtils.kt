@@ -58,6 +58,14 @@ object AppUtils {
         return SPUtils.getString(Key.USER_COUNTRY_UCID)
     }
 
+    fun setLocalHost(url:String){
+        SPUtils.putString(Key.LOCAL_HOST,url)
+    }
+
+    fun getLocalHost():String{
+        return SPUtils.getString(Key.LOCAL_HOST)
+    }
+
     fun getUserCountry(): String {
         var country: String = SPUtils.getString(Key.USER_COUNTRY)
         if (country != null && !"".equals(country)) {

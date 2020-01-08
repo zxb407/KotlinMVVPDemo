@@ -5,6 +5,7 @@ import com.jjshouse.kotlinmvvpdemo.BuildConfig
 
 object Key {
 
+    val LOCAL_HOST = "local_host"
     val ADDRESS_BEAN = "address_bean"
     val ADDRESS_CHECKOUT = "address_checkout"
     val ADDRESS_ID = "address_id"

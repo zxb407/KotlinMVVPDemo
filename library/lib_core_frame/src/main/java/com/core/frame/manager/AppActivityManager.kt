@@ -95,7 +95,6 @@ class AppActivityManager private constructor() {
         } catch (e: Exception) {
             LogUtils.vTag("AppActivityManager", "" + e)
         }
-
     }
 
     companion object {

@@ -11,6 +11,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
+import okhttp3.logging.HttpLoggingInterceptor;
 import okio.Buffer;
 import okio.BufferedSource;
 import retrofit2.Retrofit;
@@ -22,9 +23,11 @@ import retrofit2.converter.jackson.JacksonConverterFactory;
  * @Date on 2019/8/2
  * @Description
  */
-class RetrofitUtils {
-
+public class RetrofitUtils {
     private static final Retrofit RETROFIT;
+
+    public static String BASE_URL = "https://www.veryvoga.com/en/";
+    public static String BASE_APP_URL = "https://app.veryvoga.com/en/";
     static final String CONNECT_TIMEOUT = "CONNECT_TIMEOUT";
     static final String READ_TIMEOUT = "READ_TIMEOUT";
     static final String WRITE_TIMEOUT = "WRITE_TIMEOUT";
@@ -84,6 +87,7 @@ class RetrofitUtils {
             try {
                 Class cls = Class.forName("com.facebook.stetho.okhttp3.StethoInterceptor");
                 okHttpBuild.addNetworkInterceptor((Interceptor) cls.newInstance());
+                okHttpBuild.addInterceptor(getHttpLoggingInterceptor());
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -96,7 +100,7 @@ class RetrofitUtils {
 
         RETROFIT = new Retrofit.Builder()
                 .client(client)
-                .baseUrl("https://www.baidu.com/")
+                .baseUrl("https://www.veryvoga.com/")
                 .addConverterFactory(JacksonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();
@@ -109,4 +113,11 @@ class RetrofitUtils {
     static <T> T create(Class<T> service) {
         return RETROFIT.create(service);
     }
+
+    private static HttpLoggingInterceptor getHttpLoggingInterceptor() {
+        HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor(message -> LogUtils.dTag("RxRetrofit", "Retrofit====Message:" + message));
+        loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+        return loggingInterceptor;
+    }
 }
+

@@ -47,11 +47,11 @@ class StateLayout @JvmOverloads constructor(context: Context, attrs: AttributeSe
         //1.加载loadingView
         loadingView = View.inflate(context, R.layout.layout_loading, null)
         //2.添加失败的View
-        errorView = View.inflate(context, R.layout.layout_network404, null)
+        errorView = View.inflate(context, R.layout.layout_network, null)
         val btn_reload = errorView!!.findViewById<Button>(R.id.click_again)
         btn_reload.click(OnClickListener {
             if (!NetworkUtils.isConnected()) {
-                com.core.frame.utils.ToastUtils.showCustomLong(R.layout.layout_net_error_toast,Gravity.CENTER)
+                com.core.frame.utils.ToastUtils.showCustomLong(R.layout.layout_net_error_toast, Gravity.CENTER)
                 return@OnClickListener
             }
             //1.先显示loadingView
@@ -65,8 +65,8 @@ class StateLayout @JvmOverloads constructor(context: Context, attrs: AttributeSe
         //3.添加空白的view
         emptyView = View.inflate(context, R.layout.layout_empty_view, null)
         addView(emptyView)
-        addView(loadingView)
         //4.加载成功的View在各界面是不同的，所以提供一个方法bindsucessview动态添加
+
         //一开始隐藏所有的View
         hideAll()
     }
@@ -80,6 +80,7 @@ class StateLayout @JvmOverloads constructor(context: Context, attrs: AttributeSe
             successView!!.visibility = View.INVISIBLE//隐藏successView
             //将它添加进来
             addView(successView)
+            addView(loadingView)
         }
     }
 
@@ -99,7 +100,7 @@ class StateLayout @JvmOverloads constructor(context: Context, attrs: AttributeSe
 
     fun bindLoadingView(view: View?) {
         //检查是否被绑定
-        if (!checkToBindView(loadingView)&& null != view){
+        if (!checkToBindView(loadingView) && null != view) {
             removeView(loadingView)
         }
 

@@ -2,38 +2,34 @@ package com.jjshouse.kotlinmvvpdemo
 
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
+import androidx.databinding.DataBindingUtil
+import com.blankj.utilcode.util.LogUtils
 import com.core.frame.utils.ToastUtils
-import com.ethanhua.skeleton.Skeleton
 import com.ethanhua.skeleton.SkeletonScreen
 import com.jjshouse.kotlinmvvpdemo.base.BaseMvpActivity
+import com.jjshouse.kotlinmvvpdemo.databinding.ActivitySecondBinding
+import com.jjshouse.kotlinmvvpdemo.model.databean.HomeDataBean
 import com.jjshouse.kotlinmvvpdemo.mvvp.contract.SecondActivityContract
 import com.jjshouse.kotlinmvvpdemo.mvvp.presenter.SecondeActivityPresenter
-import kotlinx.android.synthetic.main.activity_second.*
 
 class SecondActivity : BaseMvpActivity<SecondeActivityPresenter>(), SecondActivityContract.View {
 
     private var skeletonScreen: SkeletonScreen? = null
+    lateinit var binding: ActivitySecondBinding
 
     override fun getSuccessView(): View {
-        return View.inflate(this, R.layout.activity_second, null)
+        binding = ActivitySecondBinding.inflate(layoutInflater, null, false)
+        binding.act = this
+        return binding.root
     }
-
-//    override fun getLoadingView(): View? {
-//        return View.inflate(this, R.layout.skeleton_activity_product_detail, null)
-//    }
 
     override fun inject() {
         getInjector().inject(this)
     }
 
     override fun initView() {
-        stateLayout.showSuccessView()
-        skeletonScreen = Skeleton.bind(cs_root)
-            .load(R.layout.skeleton_activity_product_detail)
-            .duration(800)
-            .color(R.color.shimmer_color)
-            .angle(20)
-            .show()
+        stateLayout.showLoadingViewAbove()
     }
 
     override fun initEvent() {
@@ -55,18 +51,14 @@ class SecondActivity : BaseMvpActivity<SecondeActivityPresenter>(), SecondActivi
         return true
     }
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    open fun forceCrash() {
+        ToastUtils.showLong("点击forceCrash")
     }
 
-    public fun forceCrash(view: View) {
-//        mPresenter.getData()
-    }
-
-    override fun onGetDataSuccess() {
-        stateLayout.showSuccessView()
+    override fun onGetDataSuccess(data: HomeDataBean) {
         skeletonScreen?.hide()
+        stateLayout.showSuccessView()
+        binding.homeData = data
         ToastUtils.showLong("成功了")
     }
 

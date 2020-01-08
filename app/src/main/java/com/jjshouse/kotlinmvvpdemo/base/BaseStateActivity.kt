@@ -11,7 +11,7 @@ import com.jjshouse.kotlinmvvpdemo.widget.StateLayout
  */
 abstract class BaseStateActivity : BaseActivity(), StateLayout.OnReloadListener {
 
-    open lateinit var stateLayout: StateLayout
+    lateinit var stateLayout: StateLayout
 
     override fun initLayout() {
         stateLayout = StateLayout(this)

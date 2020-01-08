@@ -23,7 +23,7 @@ abstract class MToolbarActivity : MActivity() {
      */
     open fun onCreateToolbarLayout(inflater: LayoutInflater): ViewGroup {
         return inflater.inflate(R.layout.sdk_base_toolbar_activity, null) as? ViewGroup
-            ?: throw RuntimeException("Only ViewGroup will be accepted.")
+            ?: throw RuntimeException("Only ViewGroup will be accepted.") as Throwable
     }
 
     override fun setContentView(layoutResID: Int) {
@@ -38,7 +38,7 @@ abstract class MToolbarActivity : MActivity() {
     abstract fun useDefaultToolBar(): Boolean
 
     override fun setContentView(view: View?, params: ViewGroup.LayoutParams?) {
-        if (true) {
+        if (useDefaultToolBar()) {
             val rootView = onCreateToolbarLayout(layoutInflater)
             val contentView = rootView.findViewById<View>(R.id.root) as ViewGroup
             if (null != contentView) {

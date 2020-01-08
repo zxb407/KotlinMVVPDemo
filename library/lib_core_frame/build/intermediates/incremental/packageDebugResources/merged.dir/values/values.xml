@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="toastBg">#6F6F6F</color>
+    <color name="toastTextColor">#ffffff</color>
+    <dimen name="toastTextSize">14sp</dimen>
+    <string name="app_name">lib_core_frame</string>
+    <string name="bt_cancel">Cancel</string>
+    <string name="bt_sure">Commit</string>
+    <string name="crash_content">The program has an exception</string>
+    <string name="crash_title">Sorry!</string>
+</resources>

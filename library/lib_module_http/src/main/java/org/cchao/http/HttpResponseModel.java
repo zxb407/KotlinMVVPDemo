@@ -10,7 +10,8 @@ import androidx.annotation.Keep;
 @Keep
 public class HttpResponseModel<T> {
 
-    public static final int CODE_ERROR = 0;
+    public static final int CODE_ERROR = -1;
+    public static final int CODE_SUCCESS = 0;
 
     private int code;
 

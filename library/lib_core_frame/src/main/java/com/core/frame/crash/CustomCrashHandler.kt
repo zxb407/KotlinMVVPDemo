@@ -28,7 +28,7 @@ class CustomCrashHandler(context: Context, private val mHandler: Thread.Uncaught
             reportError(context, ex, formatedMessage)
         }
         if (mainthread){
-            CrashDialogActivity.launch(context)
+//            CrashDialogActivity.launch(context)
             AppActivityManager.instance.AppExit(context)
         }
     }

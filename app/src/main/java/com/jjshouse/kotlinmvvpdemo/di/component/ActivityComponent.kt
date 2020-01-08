@@ -3,6 +3,7 @@ package com.jjshouse.kotlinmvvpdemo.di.component
 import com.jjshouse.kotlinmvvpdemo.SecondActivity
 import com.jjshouse.kotlinmvvpdemo.di.module.ActivityModule
 import com.jjshouse.kotlinmvvpdemo.di.scope.ActivityScope
+import com.jjshouse.kotlinmvvpdemo.ui.activity.SplashActivity
 import dagger.Component
 
 /**
@@ -12,5 +13,6 @@ import dagger.Component
 @Component(dependencies = [AppComponent::class,ContractViewComponent::class],modules = [ActivityModule::class])
 interface ActivityComponent {
     fun inject(activity: SecondActivity)
+    fun inject(activity: SplashActivity)
 }
 

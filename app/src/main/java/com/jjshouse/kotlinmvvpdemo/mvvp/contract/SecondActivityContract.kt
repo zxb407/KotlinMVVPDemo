@@ -1,5 +1,6 @@
 package com.jjshouse.kotlinmvvpdemo.mvvp.contract
 
+import com.jjshouse.kotlinmvvpdemo.model.databean.HomeDataBean
 import org.cchao.kotlintemplate.ui.base.BasePresenter
 import org.cchao.kotlintemplate.ui.base.BaseView
 
@@ -11,7 +12,7 @@ import org.cchao.kotlintemplate.ui.base.BaseView
  */
 interface SecondActivityContract {
     interface View : BaseView {
-        fun onGetDataSuccess()
+        fun onGetDataSuccess(data: HomeDataBean)
         fun onGetDataError()
     }
 

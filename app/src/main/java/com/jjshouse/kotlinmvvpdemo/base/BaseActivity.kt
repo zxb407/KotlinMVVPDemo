@@ -45,9 +45,9 @@ abstract class BaseActivity : MToolbarActivity(){
 //    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         initComponentBuilder()
         inject()
-        super.onCreate(savedInstanceState)
         EventBus.getDefault().register(this)
         initLayout()
         if (isMonitorNetWork()) {
@@ -103,7 +103,7 @@ abstract class BaseActivity : MToolbarActivity(){
     }
 
     private fun initTipView() {
-        mTipView = layoutInflater.inflate(R.layout.layout_network_tip, null) //提示View布局
+        mTipView = layoutInflater.inflate(R.layout.layout_network_disconnection_prompt, null) //提示View布局
         mWindowManager = getSystemService(Context.WINDOW_SERVICE) as WindowManager
         mLayoutParams = WindowManager.LayoutParams(
             ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT,
