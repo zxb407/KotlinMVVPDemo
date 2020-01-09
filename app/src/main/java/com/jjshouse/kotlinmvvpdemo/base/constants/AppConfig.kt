@@ -1,5 +1,6 @@
 package com.jjshouse.kotlinmvvpdemo.base.constants
 
+import android.app.Application
 import android.text.TextUtils
 import com.jjshouse.kotlinmvvpdemo.BuildConfig
 import com.jjshouse.kotlinmvvpdemo.utils.AppUtils

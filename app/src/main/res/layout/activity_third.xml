@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="model" type="com.jjshouse.kotlinmvvpdemo.mvvp.viewmodel.ThirdViewModel"/>
+    </data>
+    <LinearLayout
+            android:id="@+id/cs_root"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+    >
+        <ImageView
+                android:id="@+id/iv_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                app:imageUrl="@{model.data.banners[0].config[0].image}"
+        />
+        <Button
+                android:id="@+id/bt_crash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{model.url}"
+                android:onClick="@{()->model.onClickButton()}"
+                app:layout_constraintTop_toBottomOf="@+id/iv_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="20dp"
+        />
+    </LinearLayout>
+</layout>

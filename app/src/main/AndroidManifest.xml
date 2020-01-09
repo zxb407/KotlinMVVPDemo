@@ -28,6 +28,7 @@
                         android:scheme="${domain}"/>
             </intent-filter>
         </activity>
+        <activity android:name=".ui.activity.ThirdActivity"/>
         <activity android:name=".ui.activity.SecondActivity"/>
         <activity android:name=".ui.activity.SplashActivity"
                   android:theme="@style/AppTheme.SplashStyle">

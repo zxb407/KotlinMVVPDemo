@@ -46,7 +46,7 @@ data class StyleConf(
 data class Banner(
         val allText: String,
         val allUrl: String,
-        val config: MutableList<Config>,
+        var config: MutableList<Config>,
         val galleryConfig: MutableList<GalleryBean>,
         val title: String,
         val type: Int,
@@ -63,7 +63,7 @@ data class GalleryBean(
 
 data class Config(
         val height: Double,
-        val image: String,
+        var image: String,
         val shopPrice: String,
         val showActivityLabel: Int,
         val url: String,

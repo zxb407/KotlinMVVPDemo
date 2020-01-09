@@ -75,7 +75,7 @@ class MainActivity : MToolbarActivity(), View.OnClickListener {
                             .subscribe { permission ->
                                 when {
                                     permission.granted ->
-                                        startActivity(Intent(this@MainActivity, SecondActivity::class.java))
+                                        startActivity(Intent(this@MainActivity, ThirdActivity::class.java))
                                     permission.shouldShowRequestPermissionRationale -> showTip(2)
                                     else ->
                                         showTip(1)
@@ -113,7 +113,7 @@ class MainActivity : MToolbarActivity(), View.OnClickListener {
                             .subscribe { permission ->
                                 when {
                                     permission.granted ->
-                                        startActivity(Intent(this@MainActivity, SecondActivity::class.java))
+                                        startActivity(Intent(this@MainActivity, ThirdActivity::class.java))
                                     permission.shouldShowRequestPermissionRationale -> showTip(2)
                                     else ->
                                         showTip(1)
@@ -137,7 +137,7 @@ class MainActivity : MToolbarActivity(), View.OnClickListener {
                     .subscribe { permission ->
                         when {
                             permission.granted ->
-                                startActivity(Intent(this@MainActivity, SecondActivity::class.java))
+                                startActivity(Intent(this@MainActivity, ThirdActivity::class.java))
                             permission.shouldShowRequestPermissionRationale -> showTip(2)
                             else ->
                                 showTip(1)
