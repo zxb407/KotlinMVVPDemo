@@ -11,10 +11,8 @@ import com.blankj.utilcode.util.ScreenUtils
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.target.SimpleTarget
-import com.bumptech.glide.request.transition.DrawableCrossFadeTransition
 import com.bumptech.glide.request.transition.Transition
 import com.core.frame.utils.jsonutils.JsonUtils
-import com.jjshouse.kotlinmvvpdemo.MainActivity
 import com.jjshouse.kotlinmvvpdemo.R
 import com.jjshouse.kotlinmvvpdemo.base.BaseMvpActivity
 import com.jjshouse.kotlinmvvpdemo.handle.URLManager

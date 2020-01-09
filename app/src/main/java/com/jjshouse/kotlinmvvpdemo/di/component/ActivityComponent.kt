@@ -1,6 +1,6 @@
 package com.jjshouse.kotlinmvvpdemo.di.component
 
-import com.jjshouse.kotlinmvvpdemo.SecondActivity
+import com.jjshouse.kotlinmvvpdemo.ui.activity.SecondActivity
 import com.jjshouse.kotlinmvvpdemo.di.module.ActivityModule
 import com.jjshouse.kotlinmvvpdemo.di.scope.ActivityScope
 import com.jjshouse.kotlinmvvpdemo.ui.activity.SplashActivity

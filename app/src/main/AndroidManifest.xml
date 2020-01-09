@@ -18,7 +18,7 @@
                 android:name="firebase_crashlytics_collection_enabled"
                 android:value="false"/>
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.activity.MainActivity">
             <intent-filter android:autoVerify="true">
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT"/>
@@ -28,7 +28,7 @@
                         android:scheme="${domain}"/>
             </intent-filter>
         </activity>
-        <activity android:name=".SecondActivity"/>
+        <activity android:name=".ui.activity.SecondActivity"/>
         <activity android:name=".ui.activity.SplashActivity"
                   android:theme="@style/AppTheme.SplashStyle">
             <intent-filter>

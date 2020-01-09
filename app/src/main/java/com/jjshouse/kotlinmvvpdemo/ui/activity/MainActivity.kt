@@ -1,4 +1,4 @@
-package com.jjshouse.kotlinmvvpdemo
+package com.jjshouse.kotlinmvvpdemo.ui.activity
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -10,11 +10,10 @@ import android.os.Bundle
 import android.provider.Settings
 import android.view.View
 import com.blankj.utilcode.util.LogUtils
-import com.bumptech.glide.Glide
 import com.core.frame.Variables
 import com.core.frame.base.MToolbarActivity
 import com.core.frame.model.NetWorkChangeEvent
-import com.jjshouse.kotlinmvvpdemo.utils.glideutils.GlideUtil
+import com.jjshouse.kotlinmvvpdemo.R
 import com.tbruyelle.rxpermissions2.RxPermissions
 import kotlinx.android.synthetic.main.activity_main.*
 import org.greenrobot.eventbus.EventBus

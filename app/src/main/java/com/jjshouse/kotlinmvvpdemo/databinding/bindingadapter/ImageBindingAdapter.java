@@ -4,6 +4,7 @@ import android.graphics.Bitmap;
 import android.widget.ImageView;
 import androidx.databinding.BindingAdapter;
 import com.jjshouse.kotlinmvvpdemo.utils.glideutils.GlideUtil;
+import com.jjshouse.kotlinmvvpdemo.utils.glideutils.options.GlideOptionsFactory;
 
 /**
  * PackageName: com.jjshouse.kotlinmvvpdemo.databinding.bindingadapter
@@ -13,7 +14,7 @@ import com.jjshouse.kotlinmvvpdemo.utils.glideutils.GlideUtil;
 public class ImageBindingAdapter {
     @BindingAdapter(value = {"imageUrl"}, requireAll = true)
     public static void setImageUrl(ImageView view, String url) {
-        GlideUtil.display(view.getContext(), view, url);
+        GlideUtil.display(view.getContext(), view, url, GlideOptionsFactory.INSTANCE.get(GlideOptionsFactory.Type.THUMBNAIL));
     }
 
     @BindingAdapter(value = {"imageSrc"}, requireAll = true)

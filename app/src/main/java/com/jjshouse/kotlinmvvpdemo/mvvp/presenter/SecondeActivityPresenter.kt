@@ -23,7 +23,7 @@ class SecondeActivityPresenter
             return
         }
         Thread(Runnable {
-            Thread.sleep(3000)
+            Thread.sleep(300)
             BaseApplication.handler.post { getPresenterView()?.onGetDataSuccess(HomeDataMock.instance.getHomeData()) }
         }).start()
     }

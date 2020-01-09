@@ -3,7 +3,7 @@
     <data>
         <import type="com.jjshouse.kotlinmvvpdemo.model.databean.HomeDataBean"/>
         <variable name="homeData" type="HomeDataBean"/>
-        <variable name="act" type="com.jjshouse.kotlinmvvpdemo.SecondActivity"/>
+        <variable name="act" type="com.jjshouse.kotlinmvvpdemo.ui.activity.SecondActivity"/>
     </data>
     <LinearLayout
             android:id="@+id/cs_root"
@@ -28,17 +28,26 @@
                 app:imageUrl="@{homeData.banners[0].config[0].image}"
                 android:adjustViewBounds="true"
                 android:scaleType="fitXY"
+                android:visibility="gone"
         />
         <Button
                 android:id="@+id/bt_crash"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Force Crash"
-                android:onClick="@{()->act.forceCrash()}"
                 app:layout_constraintTop_toBottomOf="@+id/iv_content"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="20dp"
         />
+        <ImageView
+                android:id="@+id/iv_transition"
+                android:layout_width="300dp"
+                android:layout_height="411dp"
+                android:layout_marginTop="20dp"
+                android:scaleType="fitXY"
+                android:onClick="@{()->act.forceCrash()}"
+        />
+
     </LinearLayout>
 </layout>

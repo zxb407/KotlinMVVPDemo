@@ -6,6 +6,7 @@ import android.graphics.drawable.Drawable;
 import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import com.blankj.utilcode.util.LogUtils;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.Priority;
 import com.bumptech.glide.RequestBuilder;
@@ -15,11 +16,12 @@ import com.bumptech.glide.request.RequestOptions;
 import com.jjshouse.kotlinmvvpdemo.JJApplication;
 import com.jjshouse.kotlinmvvpdemo.utils.glideutils.options.GlideOptions;
 import com.jjshouse.kotlinmvvpdemo.utils.glideutils.options.GlideOptionsFactory;
+import org.greenrobot.greendao.query.WhereCondition;
 
 public class GlideUtil {
 
     public static void display(Context context, ImageView imageView, String url) {
-        display(context, imageView, url, GlideOptionsFactory.get(GlideOptionsFactory.Type.DEFAULT));
+        display(context, imageView, url, GlideOptionsFactory.INSTANCE.get(GlideOptionsFactory.Type.DEFAULT));
     }
 
     public static void display(Context context, ImageView imageView, String url, GlideOptions op) {
@@ -36,7 +38,7 @@ public class GlideUtil {
     }
 
     public static void display(AppCompatActivity activity, ImageView imageView, String url) {
-        display(activity, imageView, url, GlideOptionsFactory.get(GlideOptionsFactory.Type.DEFAULT));
+        display(activity, imageView, url, GlideOptionsFactory.INSTANCE.get(GlideOptionsFactory.Type.DEFAULT));
     }
 
     public static void display(AppCompatActivity activity, ImageView imageView, String url, GlideOptions op) {
@@ -48,7 +50,7 @@ public class GlideUtil {
     }
 
     public static void display(Fragment fragment, ImageView imageView, String url) {
-        display(fragment, imageView, url, GlideOptionsFactory.get(GlideOptionsFactory.Type.DEFAULT));
+        display(fragment, imageView, url, GlideOptionsFactory.INSTANCE.get(GlideOptionsFactory.Type.DEFAULT));
     }
 
     public static void display(Fragment fragment, ImageView imageView, String url, GlideOptions op) {
@@ -60,7 +62,6 @@ public class GlideUtil {
     }
 
     /**
-     *
      * @param builder
      * @param imageView
      * @param op
@@ -76,6 +77,9 @@ public class GlideUtil {
         if (op.getDoAnimate()) {
             builder.transition(DrawableTransitionOptions.withCrossFade());
         }
+        if (op.getThumbnail()) {
+            builder.thumbnail(op.getThumb_level());
+        }
         builder.apply(options).into(imageView);
     }
 
@@ -84,6 +88,6 @@ public class GlideUtil {
     }
 
     public static void clearDiskCache() {
-        Glide.get(JJApplication.instance.getApplicationContext()).clearDiskCache();
+        new Thread(() -> Glide.get(JJApplication.instance.getApplicationContext()).clearDiskCache()).start();
     }
 }
