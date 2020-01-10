@@ -22,7 +22,7 @@ abstract class MToolbarActivity : MActivity() {
      * @return Content view with toolbar.
      */
     open fun onCreateToolbarLayout(inflater: LayoutInflater): ViewGroup {
-        return inflater.inflate(R.layout.sdk_base_toolbar_activity, null) as? ViewGroup
+        return inflater.inflate(R.layout.sdk_base_toolbar_fragment, null) as? ViewGroup
             ?: throw RuntimeException("Only ViewGroup will be accepted.") as Throwable
     }
 

@@ -7,23 +7,23 @@ import com.jjshouse.kotlinmvvpdemo.utils.glideutils.GlideUtil;
 import com.jjshouse.kotlinmvvpdemo.utils.glideutils.options.GlideOptionsFactory;
 
 /**
- * PackageName: com.jjshouse.kotlinmvvpdemo.databinding.viewbindingadapter
- * Created by xbzhang on 2020/1/9
+ * PackageName: com.jjshouse.kotlinmvvpdemo.databinding.bindingadapter
+ * Created by xbzhang on 2020/1/7
  * Description:
  */
 public class ImageBindingAdapter {
-    @BindingAdapter({"imageUrl"})
-    public static void setImageUrl(ImageView view , String url) {
+    @BindingAdapter(value = {"imageUrl"}, requireAll = true)
+    public static void setImageUrl(ImageView view, String url) {
         GlideUtil.display(view.getContext(), view, url, GlideOptionsFactory.INSTANCE.get(GlideOptionsFactory.Type.THUMBNAIL));
     }
 
-    @BindingAdapter({"imageSrc"})
-    public static void setImageUrl(ImageView view, int src) {
+    @BindingAdapter(value = {"imageSrc"}, requireAll = true)
+    public static void setImageSrc(ImageView view, int src) {
         view.setImageResource(src);
     }
 
-    @BindingAdapter({"imageBitmap"})
-    public static void setImageUrl(ImageView view, Bitmap bitmap) {
+    @BindingAdapter(value = {"imageBitmap"}, requireAll = true)
+    public static void setImageBitmap(ImageView view, Bitmap bitmap) {
         view.setImageBitmap(bitmap);
     }
 }

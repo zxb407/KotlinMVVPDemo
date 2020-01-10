@@ -1,6 +1,5 @@
 package com.jjshouse.kotlinmvvpdemo.ui.activity
 
-import android.view.View
 import androidx.lifecycle.Observer
 import com.core.frame.utils.ToastUtils
 import com.jjshouse.kotlinmvvpdemo.BR
@@ -72,11 +71,4 @@ class ThirdActivity : BaseMvvpActivity<ActivityThirdBinding, ThirdViewModel, Sec
         mViewModel.data.observe(this,
             Observer<HomeDataBean> { ToastUtils.showShort("数据有更新") })
     }
-
-//    public fun forceCrash(view: View) {
-//        this.data?.let {
-//            it.banners[0].config[0].image = "https://cdn-4.jjshouse.com/upimg/jjshouse/o400/5c/00/896c89a9c40330b5c23165b4a52c5c00.jpg"
-//            mViewModel.data.value = it
-//        }
-//    }
 }
