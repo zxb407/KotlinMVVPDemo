@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BannerIndicator">
+        <!-- 圆点的颜色 -->
+        <attr name="selectColor" format="color" />
+        <!-- 未选中圆点的颜色 -->
+        <attr name="unselectedColor" format="color" />
+        <!-- 圆点的大小 -->
+        <attr name="radius" format="dimension" />
+        <!-- 圆点间间距的大小 -->
+        <attr name="space" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="CircleImageView">
+        <attr name="civ_border_width" format="dimension" />
+        <attr name="civ_border_color" format="color" />
+        <attr name="civ_border_overlay" format="boolean" />
+        <attr name="civ_fill_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="ExpandableLayout">
+        <attr name="el_duration" format="integer" />
+        <attr name="el_expanded" format="boolean" />
+        <attr name="el_parallax" format="float" />
+        <attr name="android:orientation" />
+    </declare-styleable>
+    <declare-styleable name="DivisionEditText">
+        <attr name="totalLength" format="integer" />
+        <attr name="sperator" format="string" />
+        <attr name="needSperate" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="SwitchButton">
+        <attr name="switchButton_move" format="boolean" />
+        <attr name="switchButton_gradient" format="boolean" />
+        <attr name="switchButton_selectedColor" format="color" />
+        <attr name="switchButton_unSelectedColor" format="color" />
+        <attr name="switchButton_color" format="color" />
+        <attr name="switchButton_padding" format="dimension" />
+        <attr name="switchButton_duration" format="integer" />
+        <attr name="switchButton_springback" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="Fp_ShadowLayout">
+        <attr name="fp_shadowColor" format="color"/>
+        <attr name="fp_shadowRadius" format="dimension"/>
+        <attr name="fp_shadowRoundRadius" format="dimension"/>
+        <attr name="fp_shadowShape">
+            <flag name="fp_rectangle" value="0x0001"/>
+            <flag name="fp_round_rectangle" value="0x0100"/>
+        </attr>
+        <attr name="fp_shadowSide">
+            <flag name="fp_all" value="0x1111"/>
+            <flag name="fp_left" value="0x0001"/>
+            <flag name="fp_top" value="0x0010"/>
+            <flag name="fp_right" value="0x0100"/>
+            <flag name="fp_bottom" value="0x1000"/>
+        </attr>
+        <attr name="fp_round_corner">
+            <flag name="fp_corner_all" value="0x1111"/>
+            <flag name="fp_corner_leftTop" value="0x0001"/>
+            <flag name="fp_corner_leftBottom" value="0x0010"/>
+            <flag name="fp_corner_rightTop" value="0x0100"/>
+            <flag name="fp_corner_rightBottom" value="0x1000"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="CustomImageView">
+        <attr name="ratio" format="float" />
+    </declare-styleable>
+
+
+    <declare-styleable name="ErrorInputLayout">
+        <attr name="minLength" format="integer"/>
+        <attr name="maxLength" format="integer"/>
+        <attr name="defaultBackground" format="reference"/>
+        <attr name="titleTextColor" format="color"/>
+        <attr name="editable" format="boolean"/>
+        <attr name="rightDrawable" format="reference"/>
+        <attr name="errorBackground" format="reference"/>
+        <attr name="isShowRight" format="boolean"/>
+        <attr name="title" format="string"/>
+        <attr name="error_text" format="string"/>
+        <attr name="edit_hint" format="string"/>
+    </declare-styleable>
+    <declare-styleable name="ResizableImageView">
+        <attr name="isResizeHeight" format="boolean"/>
+    </declare-styleable>
+
+</resources>

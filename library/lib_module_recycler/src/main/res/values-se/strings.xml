@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="head_action">ner för att uppdatera</string>
+    <string name="head_restore">släpp för att uppdatera</string>
+    <string name="head_unaction">släpp för att uppdatera</string>
+    <string name="head_loading">ladda ner…</string>
+
+</resources>

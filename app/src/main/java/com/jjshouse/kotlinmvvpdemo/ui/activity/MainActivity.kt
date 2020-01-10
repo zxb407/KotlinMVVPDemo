@@ -1,149 +1,170 @@
 package com.jjshouse.kotlinmvvpdemo.ui.activity
 
-import android.Manifest
-import android.annotation.SuppressLint
-import android.app.AlertDialog
-import android.app.Dialog
+import android.content.Context
 import android.content.Intent
-import android.net.Uri
-import android.os.Bundle
-import android.provider.Settings
 import android.view.View
-import com.blankj.utilcode.util.LogUtils
-import com.core.frame.Variables
-import com.core.frame.base.MToolbarActivity
-import com.core.frame.model.NetWorkChangeEvent
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
+import com.core.frame.manager.ActivityLifecycleManager
+import com.core.frame.manager.AppActivityManager
+import com.core.frame.utils.jsonutils.JsonUtils
 import com.jjshouse.kotlinmvvpdemo.R
-import com.tbruyelle.rxpermissions2.RxPermissions
+import com.jjshouse.kotlinmvvpdemo.base.BaseActivity
+import com.jjshouse.kotlinmvvpdemo.model.databean.MessageBean
+import com.jjshouse.kotlinmvvpdemo.ui.fragment.CategoryFragment
 import kotlinx.android.synthetic.main.activity_main.*
-import org.greenrobot.eventbus.EventBus
-import org.greenrobot.eventbus.Subscribe
-import org.greenrobot.eventbus.ThreadMode
 
-class MainActivity : MToolbarActivity(), View.OnClickListener {
+class MainActivity : BaseActivity(), View.OnClickListener {
 
-    companion object{
+    var curTag: String = TAG_FRAGMENT_HOME
+    private lateinit var fm: FragmentManager
+    private lateinit var ft: FragmentTransaction
+    private var firstTime: Long = 0
+
+    //是否需要在登录成功后处理推送跳转
+    private var needProcessPush = false
+
+    companion object {
+        const val TAG_FRAGMENT_CATEGORY = "tag_fragment_category"
+        const val TAG_FRAGMENT_BAG = "tag_fragment_bag"
+        const val TAG_FRAGMENT_ACCOUNT = "tag_fragment_account"
+        const val TAG_FRAGMENT_HOME = "tag_fragment_home_native"
         const val KEY_PUSH = "key_push"
+
+        fun launch(context: Context, tag: String) {
+            val intent = Intent(context, MainActivity::class.java)
+            intent.putExtra("TAG", tag)
+            context.startActivity(intent)
+        }
+
+        fun launchPush(context: Context, bean: MessageBean): Intent {
+            val intent = Intent(context, MainActivity::class.java)
+            if (ActivityLifecycleManager.get().isBackground()) {
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
+            }
+            intent.putExtra(KEY_PUSH, JsonUtils.toString(bean))
+            return intent
+        }
+    }
+    override fun inject() {
+        getInjector().inject(this)
     }
 
-    private var mDialog: Dialog? = null
+    override fun initLayout() {
+        setContentView(R.layout.activity_main)
+    }
 
-    override fun useDefaultToolBar(): Boolean {
+    override fun initView() {
+        setRadioGroup()
+        launchFragment(curTag)
+    }
+
+    override fun initEvent() {
+    }
+
+    override fun initData() {
+    }
+
+    private fun setRadioGroup() {
+        home_navi_container.setOnCheckedChangeListener { radioGroup, checkedId ->
+            when (checkedId) {
+                R.id.home_navi_rb_home -> {
+                    curTag = TAG_FRAGMENT_HOME
+                }
+                R.id.home_navi_rb_category -> {
+                    curTag = TAG_FRAGMENT_CATEGORY
+                }
+                R.id.home_navi_rb_cart -> {
+                    curTag = TAG_FRAGMENT_BAG
+                }
+                R.id.home_navi_rb_account -> {
+                    curTag = TAG_FRAGMENT_ACCOUNT
+                }
+            }
+            switchFragment()
+        }
+    }
+
+    private fun switchFragment() {
+        fm = this@MainActivity.supportFragmentManager
+        ft = fm.beginTransaction()
+        resetFragments(fm, ft)
+        showCurrentFragment(fm, ft)
+        ft.commitAllowingStateLoss()
+    }
+
+    private fun resetFragments(fm: FragmentManager, ft: FragmentTransaction) {
+        var fragments: List<Fragment> = fm.fragments
+        for (fragment in fragments) {
+            if (fragment != null) {
+                if (fragment is CategoryFragment
+                    || fragment is CategoryFragment
+                    || fragment is CategoryFragment
+                    || fragment is CategoryFragment) {
+                    ft.hide(fragment)
+                }
+            }
+        }
+    }
+
+    private fun showCurrentFragment(fm: FragmentManager, ft: FragmentTransaction) {
+        var fragment: Fragment? = fm.findFragmentByTag(curTag)
+        if (fragment != null) {
+            ft.show(fragment)
+        } else {
+            fragment = createFragment()
+            ft.add(R.id.main_content, fragment!!, curTag)
+        }
+        fragment?.userVisibleHint = true
+    }
+
+    private fun createFragment(): Fragment? {
+        when (curTag) {
+            TAG_FRAGMENT_HOME -> return CategoryFragment.newInstance()
+            TAG_FRAGMENT_CATEGORY -> return CategoryFragment.newInstance()
+            TAG_FRAGMENT_BAG -> return CategoryFragment.newInstance()
+            TAG_FRAGMENT_ACCOUNT -> return CategoryFragment.newInstance()
+        }
+        return null
+    }
+
+    private fun launchFragment(stringExtra: String) {
+        when (stringExtra) {
+            TAG_FRAGMENT_HOME -> home_navi_rb_home.isChecked = true
+            TAG_FRAGMENT_CATEGORY -> home_navi_rb_category.isChecked = true
+            TAG_FRAGMENT_BAG -> home_navi_rb_cart.isChecked = true
+            TAG_FRAGMENT_ACCOUNT -> home_navi_rb_account.isChecked = true
+        }
+    }
+
+    override fun onBackPressed() {
+        if (!curTag.equals(TAG_FRAGMENT_HOME)) {
+            launchFragment(TAG_FRAGMENT_HOME)
+        } else {
+            var secondTime = System.currentTimeMillis()
+            if (secondTime - firstTime > 2000) {
+                Toast.makeText(this, resources.getString(R.string.press_again_to_exit), Toast.LENGTH_SHORT).show()
+                firstTime = secondTime
+            } else {
+                AppActivityManager.instance.AppExit()
+            }
+        }
+    }
+
+    override fun onTryAgain() {
+    }
+
+    override fun isMonitorNetWork(): Boolean {
         return true
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        EventBus.getDefault().register(this)
-        initView()
-        initEvent()
+    override fun useDefaultToolBar(): Boolean {
+        return false
     }
 
-    private fun initView() {
-        setupTitle("Home")
-    }
+    override fun onClick(p0: View) {
 
-
-    @SuppressLint("CheckResult")
-    private fun initEvent() {
-        bt_jump.setOnClickListener(this)
-
-    }
-
-    private fun showTip(type: Int) {
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle("permission")
-            .setMessage("点击允许才可以使用我们的app哦")
-            .setPositiveButton("去允许") { dialog, id ->
-                if (mDialog != null && mDialog?.isShowing == true) {
-                    mDialog!!.dismiss()
-                }
-                when (type) {
-                    1 -> {
-                        val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
-                        val uri = Uri.fromParts("package", packageName, null)//注意就是"package",不用改成自己的包名
-                        intent.data = uri
-                        startActivityForResult(intent, 0)
-                    }
-                    2 -> {
-                        RxPermissions(this@MainActivity)
-                            .requestEachCombined(
-                                Manifest.permission.ACCESS_FINE_LOCATION,
-                                Manifest.permission.ACCESS_COARSE_LOCATION
-                            )
-                            .subscribe { permission ->
-                                when {
-                                    permission.granted ->
-                                        startActivity(Intent(this@MainActivity, ThirdActivity::class.java))
-                                    permission.shouldShowRequestPermissionRationale -> showTip(2)
-                                    else ->
-                                        showTip(1)
-                                }
-                            }
-                    }
-                }
-            }
-        mDialog = builder.create()
-        mDialog?.setCanceledOnTouchOutside(false)
-        mDialog?.show()
-    }
-
-    @Subscribe(threadMode = ThreadMode.MAIN)
-    public fun NetworkCallback(netWorkChangeEvent: NetWorkChangeEvent) {
-        LogUtils.d("NetWorkStateMonitor", "${netWorkChangeEvent.isConnect}---${Variables.NetworkType}")
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        EventBus.getDefault().unregister(this)
-    }
-
-    override fun onClick(v: View) {
-        when (v.id) {
-            R.id.bt_jump -> {
-                RxPermissions(this@MainActivity)
-                    .requestEachCombined(Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                    .subscribe {
-                        RxPermissions(this@MainActivity)
-                            .requestEachCombined(
-                                Manifest.permission.ACCESS_FINE_LOCATION,
-                                Manifest.permission.ACCESS_COARSE_LOCATION
-                            )
-                            .subscribe { permission ->
-                                when {
-                                    permission.granted ->
-                                        startActivity(Intent(this@MainActivity, ThirdActivity::class.java))
-                                    permission.shouldShowRequestPermissionRationale -> showTip(2)
-                                    else ->
-                                        showTip(1)
-                                }
-                            }
-                    }
-            }
-        }
-
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        when (requestCode) {
-            0 -> {
-                RxPermissions(this@MainActivity)
-                    .requestEachCombined(
-                        Manifest.permission.ACCESS_FINE_LOCATION,
-                        Manifest.permission.ACCESS_COARSE_LOCATION
-                    )
-                    .subscribe { permission ->
-                        when {
-                            permission.granted ->
-                                startActivity(Intent(this@MainActivity, ThirdActivity::class.java))
-                            permission.shouldShowRequestPermissionRationale -> showTip(2)
-                            else ->
-                                showTip(1)
-                        }
-                    }
-            }
-        }
     }
 }

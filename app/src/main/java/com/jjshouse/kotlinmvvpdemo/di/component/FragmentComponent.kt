@@ -2,6 +2,7 @@ package com.jjshouse.kotlinmvvpdemo.di.component
 
 import com.jjshouse.kotlinmvvpdemo.di.module.FragmentModule
 import com.jjshouse.kotlinmvvpdemo.di.scope.FragmentScope
+import com.jjshouse.kotlinmvvpdemo.ui.fragment.CategoryFragment
 import dagger.Component
 
 /**
@@ -10,5 +11,5 @@ import dagger.Component
 @FragmentScope
 @Component(dependencies = [AppComponent::class,ContractViewComponent::class],modules = [FragmentModule::class])
 interface FragmentComponent {
-//    fun inject(fragment: FavoriteListFragment)
+    fun inject(fragment: CategoryFragment)
 }

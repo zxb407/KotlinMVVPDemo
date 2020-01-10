@@ -104,7 +104,8 @@ ext {
             utilcode     : 'com.blankj:utilcodex:1.26.0',
             localBroadcastManager: 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0',
             skeleton     : 'com.ethanhua:skeleton:1.1.2',
-            shimmerlayout: 'io.supercharge:shimmerlayout:2.1.0'
+            shimmerlayout: 'io.supercharge:shimmerlayout:2.1.0',
+            progressview   : buildDependency("com.pnikosis", "materialish-progress", "1.7"),
     ]
     canaryDependencies = [
             leakcanary   : 'com.squareup.leakcanary:leakcanary-android:2.1'

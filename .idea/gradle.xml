@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/library/lib_core_frame" />
             <option value="$PROJECT_DIR$/library/lib_module_http" />
+            <option value="$PROJECT_DIR$/library/lib_module_recycler" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

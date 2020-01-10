@@ -1,38 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".ui.activity.MainActivity"
-        android:orientation="vertical"
->
-    <!--<include layout="@layout/sdk_base_toolbar"/>-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/cl_main_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-    <TextView
-            android:id="@+id/tv_content"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello World!"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="50dp"
-    />
-
-    <Button
-            android:id="@+id/bt_jump"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="jump second activity"
-            android:onClick="jump"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp"
-    />
-    <ImageView
-            android:id="@+id/iv_content1"
+    <FrameLayout
+            android:id="@+id/main_content"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:scaleType="fitXY"
-            />
+            android:layout_height="match_parent"
+            android:layout_above="@id/v_rb_top_line"/>
 
-</LinearLayout>
+    <View
+            android:id="@+id/v_rb_top_line"
+            android:layout_width="match_parent"
+            android:layout_height="0.2dp"
+            android:layout_above="@id/home_navi_container"
+            android:background="@color/common_bg_color_f6"/>
+
+    <RadioGroup
+            android:id="@+id/home_navi_container"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_alignParentBottom="true"
+            android:alpha="0.8"
+            android:background="#FFFFFF"
+            android:orientation="horizontal">
+
+        <RadioButton
+                android:id="@+id/home_navi_rb_home"
+                style="@style/navigation_button_style"
+                android:drawableTop="@drawable/selector_navi_home"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/navi_bar_home"/>
+
+        <RadioButton
+                android:id="@+id/home_navi_rb_category"
+                style="@style/navigation_button_style"
+                android:drawableTop="@drawable/selector_navi_category"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/navi_bar_category"/>
+
+        <RadioButton
+                android:id="@+id/home_navi_rb_cart"
+                style="@style/navigation_button_style"
+                android:drawableTop="@drawable/selector_navi_cart"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/app_bag"/>
+
+        <RadioButton
+                android:id="@+id/home_navi_rb_account"
+                style="@style/navigation_button_style"
+                android:drawableTop="@drawable/selector_navi_account"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/navi_bar_account"/>
+    </RadioGroup>
+
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="48dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/transparent"
+            android:orientation="horizontal">
+
+        <Button
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@color/transparent"
+                android:visibility="invisible"/>
+
+        <Button
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:visibility="invisible"/>
+
+        <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+            <Button
+                    android:id="@+id/bag_msg_bt"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:visibility="invisible"/>
+
+            <Space
+                    android:id="@+id/space"
+                    android:layout_width="1px"
+                    android:layout_height="1px"
+                    android:layout_centerHorizontal="true"/>
+
+            <TextView
+                    android:id="@+id/tv_bag_count"
+                    android:layout_width="23dp"
+                    android:layout_height="13dp"
+                    android:layout_toEndOf="@+id/space"
+                    android:layout_marginStart="-3.5dp"
+                    android:background="@drawable/nav_unread_red_bg"
+                    android:includeFontPadding="false"
+                    android:gravity="center"
+                    android:textColor="#ffffff"
+                    android:textSize="10sp"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    tools:text="9"/>
+
+        </RelativeLayout>
+
+        <Button
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:visibility="invisible"/>
+    </LinearLayout>
+
+</RelativeLayout>
+
+

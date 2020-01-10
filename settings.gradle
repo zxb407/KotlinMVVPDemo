@@ -6,5 +6,8 @@ project(':lib_core_frame').projectDir = new File('library/lib_core_frame')
 include ':lib_module_http'
 project(':lib_module_http').projectDir = new File('library/lib_module_http')
 
+include ':lib_module_recycler'
+project(':lib_module_recycler').projectDir = new File('library/lib_module_recycler')
+
 
 

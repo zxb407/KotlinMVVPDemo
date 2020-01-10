@@ -80,4 +80,7 @@ dependencies {
     api androidxDependencies.annotation
     api otherDependencies.rxpermission
     debugApi canaryDependencies.leakcanary
+    api otherDependencies.glide
+    kapt otherDependencies.glideCompile
+    api otherDependencies.progressview
 }

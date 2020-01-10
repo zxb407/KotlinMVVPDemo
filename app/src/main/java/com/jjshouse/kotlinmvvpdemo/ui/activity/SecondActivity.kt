@@ -4,13 +4,13 @@ import android.annotation.SuppressLint
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.TransitionDrawable
 import android.view.View
+import com.bumptech.glide.Glide
 import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
 import com.core.frame.utils.ToastUtils
 import com.ethanhua.skeleton.SkeletonScreen
-import com.jjshouse.kotlinmvvpdemo.GlideApp
 import com.jjshouse.kotlinmvvpdemo.base.BaseMvpActivity
 import com.jjshouse.kotlinmvvpdemo.databinding.ActivitySecondBinding
 import com.jjshouse.kotlinmvvpdemo.model.databean.HomeDataBean
@@ -54,7 +54,7 @@ class SecondActivity : BaseMvpActivity<SecondeActivityPresenter>(), SecondActivi
     }
 
     private fun loadPic(url: String) {
-        GlideApp.with(this)
+        Glide.with(this)
             .load(url)
             .listener(object : RequestListener<Drawable> {
                 override fun onLoadFailed(
@@ -82,7 +82,7 @@ class SecondActivity : BaseMvpActivity<SecondeActivityPresenter>(), SecondActivi
     }
 
     private fun loadSecondPic(url: String) {
-        GlideApp.with(this)
+        Glide.with(this)
             .load(url)
             .listener(object : RequestListener<Drawable> {
                 override fun onLoadFailed(

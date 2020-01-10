@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="head_action">para baixo para atualizar</string>
+    <string name="head_restore">Solte para atualizar</string>
+    <string name="head_unaction">Solte para atualizar</string>
+    <string name="head_loading">baixar…</string>
+
+</resources>

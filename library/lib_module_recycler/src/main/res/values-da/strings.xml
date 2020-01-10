@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="head_action">nede for at opdatere</string>
+    <string name="head_restore">frigiv for at opdatere</string>
+    <string name="head_unaction">frigiv for at opdatere</string>
+    <string name="head_loading">Hent…</string>
+
+</resources>

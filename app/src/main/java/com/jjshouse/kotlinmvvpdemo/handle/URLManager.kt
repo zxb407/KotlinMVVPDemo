@@ -32,7 +32,7 @@ object URLManager {
             imgsUrl.startsWith("//") -> return "http:$imgsUrl"
             imgsUrl.startsWith("/") -> imgsUrl = imgsUrl.substring(1)
         }
-        return "http://$imgsUrl"
+        return "https://$imgsUrl"
     }
 
     /**

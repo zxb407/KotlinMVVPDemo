@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+    <com.jjshouse.kotlinmvvpdemo.widget.FpShadowLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:fp_shadowColor="#19000000"
+            app:fp_shadowRadius="4dp"
+            app:fp_shadowShape="fp_rectangle"
+            app:fp_shadowSide="fp_bottom">
+
+        <androidx.appcompat.widget.Toolbar
+                android:id="@id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@color/colorPrimary"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        >
+
+            <ImageView
+                    android:id="@+id/toolbar_back_icon"
+                    android:layout_width="43dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="start"
+                    android:clickable="true"
+                    android:paddingVertical="14dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/arrow_left"
+                    android:visibility="gone"/>
+
+            <TextView
+                    android:id="@android:id/title"
+                    style="@style/App.Text.XLarge"
+                    android:layout_gravity="center"
+                    android:ellipsize="marquee"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="@string/category_fragment"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"/>
+
+            <ImageView
+                    android:id="@+id/category_search_icon"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="16dp"
+                    android:clickable="true"
+                    android:gravity="end"
+                    android:src="@drawable/category_search_icon_s"
+                    android:visibility="visible"/>
+        </androidx.appcompat.widget.Toolbar>
+    </com.jjshouse.kotlinmvvpdemo.widget.FpShadowLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rc_left"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="104"
+                android:background="#EBEBEB"/>
+
+        <androidx.core.widget.NestedScrollView
+                android:id="@+id/scroll_container"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="256"
+                android:background="#F8F8F8">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginEnd="3dp"
+                        android:background="@drawable/shadow_category">
+
+                    <com.jjshouse.kotlinmvvpdemo.widget.CustomImageView
+                            android:id="@+id/category_banner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:scaleType="fitXY"
+                            app:ratio="0.362"/>
+                </FrameLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rc_right"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginEnd="3dp"/>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+</LinearLayout>
+
+

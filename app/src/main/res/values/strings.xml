@@ -5,4 +5,14 @@
     <string name="try_again">Please try again</string>
     <string name="it_is_empty_here">It is empty here:-(</string>
     <string name="splash_jump">SKIP \%s</string>
+
+    <!--mainactivity-->
+    <string name="navi_bar_account">Account</string>
+    <string name="navi_bar_category">Category</string>
+    <string name="navi_bar_home">Home</string>
+    <string name="app_bag">Bag</string>
+
+    <string name="press_again_to_exit">Click again to exit!</string>
+    <string name="category_fragment">Category</string>
+    <string name="all">All>></string>
 </resources>

@@ -1,10 +1,12 @@
 package com.jjshouse.kotlinmvvpdemo.utils
 
+import android.app.ActivityManager
 import android.content.Context
 import android.content.pm.PackageManager
 import android.os.Build
 import android.text.TextUtils
 import android.view.View
+import androidx.annotation.RequiresApi
 import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.GoogleApiAvailability
 import com.jjshouse.kotlinmvvpdemo.JJApplication

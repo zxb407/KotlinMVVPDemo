@@ -170,6 +170,7 @@ dependencies {
     implementation googleDependencies.firebaseCore
     implementation project(':lib_module_http')
     implementation project(':lib_core_frame')
+    implementation project(':lib_module_recycler')
 //    implementation googleDependencies.firebaseMessaging
 //    implementation googleDependencies.firebaseInappmessagingDisplay
 //    implementation googleDependencies.firebaseInappmessagingAppindexing
@@ -182,8 +183,6 @@ dependencies {
     kapt  otherDependencies.daggerCompile
     implementation otherDependencies.skeleton
     implementation otherDependencies.shimmerlayout
-    implementation otherDependencies.glide
-    kapt otherDependencies.glideCompile
 }
 
 apply plugin: 'com.google.gms.google-services'  // Google Play services Gradle plugin
