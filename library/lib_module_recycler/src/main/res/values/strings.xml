@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">lib_module_recycler</string>
+    <string name="head_action">down to refresh</string>
+    <string name="head_restore">release to refresh</string>
+    <string name="head_unaction">release to refresh</string>
+    <string name="head_loading">loading...</string>
+</resources>

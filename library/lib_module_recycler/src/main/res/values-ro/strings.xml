@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="head_action">în jos pentru a reîmprospăta</string>
+    <string name="head_restore">eliberați pentru a reîmprospăta</string>
+    <string name="head_unaction">eliberați pentru a reîmprospăta</string>
+    <string name="head_loading">Descarca…</string>
+
+</resources>

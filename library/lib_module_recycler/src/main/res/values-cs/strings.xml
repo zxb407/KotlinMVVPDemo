@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="head_action">dolů</string>
+    <string name="head_loading">stažení…</string>
+
+</resources>

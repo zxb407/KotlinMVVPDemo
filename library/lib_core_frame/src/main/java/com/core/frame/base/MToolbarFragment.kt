@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.core.frame.R
 
 
 /**
@@ -25,7 +26,7 @@ abstract class MToolbarFragment : MFragment() {
      * @return Content view with toolbar.
      */
     open fun onCreateToolbarLayout(inflater: LayoutInflater): ViewGroup {
-        return inflater.inflate(com.core.frame.R.layout.sdk_base_toolbar_activity, null) as? ViewGroup
+        return inflater.inflate(R.layout.sdk_base_toolbar_activity, null) as? ViewGroup
             ?: throw RuntimeException("Only ViewGroup will be accepted.") as Throwable
     }
 
@@ -33,7 +34,7 @@ abstract class MToolbarFragment : MFragment() {
         var childView = getContentView()
         if (useDefaultToolBar()) {
             rootView = onCreateToolbarLayout(layoutInflater)
-            val contentView = rootView!!.findViewById<View>(com.core.frame.R.id.root) as ViewGroup
+            val contentView = rootView!!.findViewById<View>(R.id.root) as ViewGroup
             contentView.addView(childView)
         } else {
             rootView = childView

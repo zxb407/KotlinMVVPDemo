@@ -6,5 +6,17 @@ project(':lib_core_frame').projectDir = new File('library/lib_core_frame')
 include ':lib_module_http'
 project(':lib_module_http').projectDir = new File('library/lib_module_http')
 
+include ':lib_module_recycler'
+project(':lib_module_recycler').projectDir = new File('library/lib_module_recycler')
+
+include ':lib_module_datepicker'
+project(':lib_module_datepicker').projectDir = new File('library/lib_module_datepicker')
+
+include ':lib_module_imagepreview'
+project(':lib_module_imagepreview').projectDir = new File('library/lib_module_imagepreview')
+
+include ':easyPhotos'
+project(':easyPhotos').projectDir = new File('library/easyPhotos')
+
 
 

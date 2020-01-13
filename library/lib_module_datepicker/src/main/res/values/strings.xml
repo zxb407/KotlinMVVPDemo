@@ -1,0 +1,5 @@
+<resources>
+    <string name="cancel">Cancel</string>
+    <string name="apply">Apply</string>
+    <string name="date_is_invalid">Expiration date is invalid!</string>
+</resources>

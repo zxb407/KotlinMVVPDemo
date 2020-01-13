@@ -60,6 +60,8 @@ dependencies {
     api androidxDependencies.constraintlayout
     api androidxDependencies.recyclerview
     api androidxDependencies.multidex
+    api androidxDependencies.material
+
     api otherDependencies.utilcode
     api otherDependencies.eventbus
     api otherDependencies.localBroadcastManager
@@ -80,4 +82,7 @@ dependencies {
     api androidxDependencies.annotation
     api otherDependencies.rxpermission
     debugApi canaryDependencies.leakcanary
+    api otherDependencies.glide
+    kapt otherDependencies.glideCompile
+    api otherDependencies.progressview
 }

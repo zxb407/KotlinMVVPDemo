@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="head_action">yenilemek için aşağı</string>
+    <string name="head_restore">yenilemek için serbest bırakın</string>
+    <string name="head_unaction">yenilemek için serbest bırakın</string>
+    <string name="head_loading">indirmek …</string>
+
+</resources>

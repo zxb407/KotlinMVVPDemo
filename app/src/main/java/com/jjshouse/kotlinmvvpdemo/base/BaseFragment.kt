@@ -7,9 +7,12 @@ import androidx.fragment.app.FragmentActivity
 import com.core.frame.base.MToolbarFragment
 import com.core.frame.model.NetWorkChangeEvent
 import com.jjshouse.kotlinmvvpdemo.JJApplication
+import com.jjshouse.kotlinmvvpdemo.di.component.DaggerContractViewComponent
 import com.jjshouse.kotlinmvvpdemo.di.component.DaggerFragmentComponent
 import com.jjshouse.kotlinmvvpdemo.di.component.FragmentComponent
 import com.jjshouse.kotlinmvvpdemo.di.module.FragmentModule
+import com.jjshouse.kotlinmvvpdemo.di.module.IViewModule
+import org.cchao.kotlintemplate.ui.base.BaseView
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
@@ -20,7 +23,7 @@ import org.greenrobot.eventbus.ThreadMode
  * Description:
  *
  */
-abstract class BaseFragment : MToolbarFragment() {
+abstract class BaseFragment : MToolbarFragment(),BaseView {
 
     open lateinit var mActivity: FragmentActivity
     private var mIsPrepare: Boolean = false
@@ -45,7 +48,10 @@ abstract class BaseFragment : MToolbarFragment() {
 
     open fun initComponentBuilder() {
         fragmentComponentBuilder = DaggerFragmentComponent.builder().fragmentModule(FragmentModule(this))
-            .appComponent(JJApplication.instance.appComponent)
+            .appComponent(JJApplication.instance.appComponent).contractViewComponent(
+                DaggerContractViewComponent.builder()
+                    .iViewModule(IViewModule(this)).build()
+            )
     }
 
     fun getInjector(): FragmentComponent {

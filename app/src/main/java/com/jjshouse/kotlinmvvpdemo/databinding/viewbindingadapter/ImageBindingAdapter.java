@@ -3,8 +3,8 @@ package com.jjshouse.kotlinmvvpdemo.databinding.viewbindingadapter;
 import android.graphics.Bitmap;
 import android.widget.ImageView;
 import androidx.databinding.BindingAdapter;
-import com.jjshouse.kotlinmvvpdemo.utils.glideutils.GlideUtil;
-import com.jjshouse.kotlinmvvpdemo.utils.glideutils.options.GlideOptionsFactory;
+import com.core.frame.utils.glideutils.GlideUtil;
+import com.core.frame.utils.glideutils.options.GlideOptionsFactory;
 
 /**
  * PackageName: com.jjshouse.kotlinmvvpdemo.databinding.bindingadapter

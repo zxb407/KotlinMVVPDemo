@@ -170,20 +170,25 @@ dependencies {
     implementation googleDependencies.firebaseCore
     implementation project(':lib_module_http')
     implementation project(':lib_core_frame')
-//    implementation googleDependencies.firebaseMessaging
-//    implementation googleDependencies.firebaseInappmessagingDisplay
-//    implementation googleDependencies.firebaseInappmessagingAppindexing
-//    implementation googleDependencies.gmsTagmanager
-//    implementation googleDependencies.gmsAuth
-//    implementation googleDependencies.analytics
-//    implementation googleDependencies.guava
-//    implementation googleDependencies.flexbox
+    implementation project(':lib_module_recycler')
+    implementation project(':easyPhotos')
+    implementation project(':lib_module_imagepreview')
+    implementation project(':lib_module_datepicker')
+    implementation googleDependencies.firebaseMessaging
+    implementation googleDependencies.firebaseInappmessagingDisplay
+    implementation googleDependencies.firebaseInappmessagingAppindexing
+    implementation googleDependencies.gmsTagmanager
+    implementation googleDependencies.gmsAuth
+    implementation googleDependencies.analytics
+    implementation googleDependencies.guava
+    implementation googleDependencies.flexbox
     implementation otherDependencies.dagger
     kapt  otherDependencies.daggerCompile
     implementation otherDependencies.skeleton
     implementation otherDependencies.shimmerlayout
-    implementation otherDependencies.glide
-    kapt otherDependencies.glideCompile
+    implementation appsflyer.sdk
+    implementation appsflyer.installreferrer
+    implementation facebookDependencies.facebookSdk
 }
 
 apply plugin: 'com.google.gms.google-services'  // Google Play services Gradle plugin

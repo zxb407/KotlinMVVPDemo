@@ -85,7 +85,7 @@ class AppActivityManager private constructor() {
     /**
      * exit app
      */
-    fun AppExit(context: Context) {
+    fun AppExit() {
         try {
             if (mActivityStack!!.size <= 1) {
                 killAllActivity()

@@ -46,6 +46,7 @@ class SplashActivity : BaseMvpActivity<SplashActivityPresenter>(), SplashActivit
 
     override fun inject() {
         getInjector().inject(this)
+
     }
 
     override fun onTryAgain() {
@@ -57,6 +58,7 @@ class SplashActivity : BaseMvpActivity<SplashActivityPresenter>(), SplashActivit
     }
 
     override fun initView() {
+        setFullScreen()
         mHandler = Handler(this)
         mHandler.sendEmptyMessageDelayed(WHAT_CLOSE, 5000)
     }

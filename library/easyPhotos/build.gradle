@@ -1,0 +1,78 @@
+apply plugin: 'com.android.library'
+group = 'com.github.HuanTanSheng'
+
+android {
+    compileSdkVersion PROJECT_BUILD.compileVersion
+
+    defaultConfig {
+        minSdkVersion PROJECT_BUILD.minSdkVersion
+        targetSdkVersion PROJECT_BUILD.targetSdkVersion
+        versionCode PROJECT_BUILD.versionCode
+        versionName PROJECT_BUILD.versionName
+        vectorDrawables.useSupportLibrary = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled enableProguardInReleaseBuilds
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            buildConfigField "Boolean", "IS_DEBUG", RELEASE_DEBUG
+            buildConfigField "String", "DOMAIN", DOMAIN
+        }
+        preview {
+            buildConfigField "Boolean", "IS_DEBUG", PREVIEW_DEBUG
+            buildConfigField "String", "DOMAIN", DOMAIN
+        }
+        debug {
+            buildConfigField "Boolean", "IS_DEBUG", TEST_DEBUG
+            buildConfigField "String", "DOMAIN", DOMAIN
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.github.chrisbanes:PhotoView:2.1.4'
+    implementation project(':lib_core_frame')
+}
+
+//// 指定编码
+//tasks.withType(JavaCompile) {
+//    options.encoding = "UTF-8"
+//}
+
+// 打包源码
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+
+//制作文档
+//task javadoc(type: Javadoc) {
+//    failOnError  false
+//    source = android.sourceSets.main.java.sourceFiles
+//    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+//    classpath += configurations.compile
+//}
+
+// 打包文档
+//task javadocJar(type: Jar, dependsOn: javadoc) {
+//    classifier = 'javadoc'
+//    from javadoc.destinationDir
+//}
+
+artifacts {
+    archives sourcesJar
+//    archives javadocJar
+}

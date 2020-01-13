@@ -1,0 +1,35 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="ExtraTranslation">
+    <string name="selector_folder_all_easy_photos">كل الصور</string>
+    <string name="selector_folder_all_video_photo_easy_photos">الصور ومقاطع الفيديو</string>
+    <string name="selector_folder_video_easy_photos">جميع مقاطع الفيديو</string>
+    <string name="selector_easy_photos">اختر</string>
+    <string name="selector_action_done_easy_photos">كامل(%2$d/%1$d)</string>
+    <string name="selector_preview_easy_photos">المعاينة</string>
+    <string name="selector_reach_max_hint_easy_photos">يمكنك فقط تحديد ما يصل إلى %d من الصور أو مقاطع الفيديو</string>
+    <string name="selector_reach_max_image_hint_easy_photos">يمكنك فقط تحديد ما يصل إلى %d من الصور</string>
+    <string name="selector_reach_max_video_hint_easy_photos">يمكن فقط تحديد ما يصل إلى %d من مقاطع الفيديو</string>
+    <string name="msg_no_camera_easy_photos">غير قادر على بدء الكاميرا!</string>
+    <string name="camera_temp_file_error_easy_photos">خطأ في الصورة</string>
+    <string name="selector_permission_error_easy_photos">إذن خاطئ ولا يعمل بشكل صحيح!</string>
+    <string name="selector_image_size_error_easy_photos">يجب أن يكون عرض الصورة أكبر من %1$d وأن يكون الارتفاع أكبر من %2$d</string>
+    <string name="selector_image_type_error_easy_photos">تنسيق الصورة هذا غير مدعوم</string>
+    <string name="edit_easy_photos">تحرير</string>
+    <string name="empty_easy_photos">واضح</string>
+    <string name="no_photos_easy_photos">لا توجد صورة تلبي المتطلبات ، التقط صورة.</string>
+    <string name="permissions_again_easy_photos">يرجى النقر والسماح إذن</string>
+    <string name="permissions_die_easy_photos">يرجى النقر والسماح للأذونات ذات الصلة في الإعدادات</string>
+    <string name="original_easy_photos">الصورة الأصلية</string>
+    <string name="preview_current_number_easy_photos">%2$d/%1$d</string>
+    <string name="done_easy_photos">كامل</string>
+    <string name="cancel_easy_photos">ألغيت</string>
+    <string name="template_easy_photos">قالب</string>
+    <string name="text_sticker_easy_photos">كتابة</string>
+    <string name="text_sticker_date_easy_photos">تاريخ</string>
+    <string name="text_sticker_hint_easy_photos">انقر مرتين للتحرير</string>
+    <string name="text_sticker_hint_name_easy_photos">عرف</string>
+    <string name="picture_selection_easy_photos">اختيار الصورة</string>
+    <string name="puzzle_easy_photos">حارب واحد</string>
+    <string name="select_puzzle_photos">يرجى اختيار 2 \ - 9 صور</string>
+    <string name="gif_easy_photos">صورة متحركة</string>
+    <string name="video_easy_photos">فيديو</string>
+</resources>
