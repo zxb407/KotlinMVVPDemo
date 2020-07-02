@@ -1,4 +1,4 @@
-package com.jjshouse.kotlinmvvpdemo.model
+package com.jjshouse.kotlinmvvpdemo.model.databean
 
 /**
  * PackageName: com.veryvoga.vv.bean

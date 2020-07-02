@@ -1,4 +1,4 @@
-package org.cchao.kotlintemplate.ui.base
+package com.jjshouse.kotlinmvvpdemo.base
 
 import io.reactivex.disposables.CompositeDisposable
 

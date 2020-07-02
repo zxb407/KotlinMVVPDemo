@@ -3,6 +3,6 @@
   xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:drawable="@android:color/white" />
     <item>
-        <bitmap android:gravity="center" android:src="@drawable/ic_splash_shein" />
+        <bitmap android:gravity="center" android:src="@mipmap/ic_splash_jjs" />
     </item>
 </layer-list>

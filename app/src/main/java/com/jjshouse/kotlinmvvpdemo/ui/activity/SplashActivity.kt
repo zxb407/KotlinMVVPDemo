@@ -17,7 +17,7 @@ import com.jjshouse.kotlinmvvpdemo.R
 import com.jjshouse.kotlinmvvpdemo.base.BaseMvpActivity
 import com.jjshouse.kotlinmvvpdemo.handle.URLManager
 import com.jjshouse.kotlinmvvpdemo.model.databean.MessageBean
-import com.jjshouse.kotlinmvvpdemo.model.StartPageBean
+import com.jjshouse.kotlinmvvpdemo.model.databean.StartPageBean
 import com.jjshouse.kotlinmvvpdemo.mvvp.contract.SplashActivityContract
 import com.jjshouse.kotlinmvvpdemo.mvvp.presenter.SplashActivityPresenter
 import com.jjshouse.kotlinmvvpdemo.utils.UtilsBigDecimal
@@ -46,7 +46,6 @@ class SplashActivity : BaseMvpActivity<SplashActivityPresenter>(), SplashActivit
 
     override fun inject() {
         getInjector().inject(this)
-
     }
 
     override fun onTryAgain() {
@@ -136,7 +135,7 @@ class SplashActivity : BaseMvpActivity<SplashActivityPresenter>(), SplashActivit
     }
 
     override fun onGetDataError(msg: String) {
-        Glide.with(this@SplashActivity).load(R.drawable.ic_splash_bg).into(object : SimpleTarget<Drawable>() {
+        Glide.with(this@SplashActivity).load(R.mipmap.ic_splash_bg).into(object : SimpleTarget<Drawable>() {
             override fun onResourceReady(resource: Drawable, transition: Transition<in Drawable>?) {
                 iv_splash.setImageDrawable(resource)
                 startAlphaAnimation()

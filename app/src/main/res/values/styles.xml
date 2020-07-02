@@ -51,32 +51,28 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="navigation_button_style">
-        <item name="android:textSize">12sp</item>
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_weight">1</item>
-        <item name="android:drawablePadding">3dp</item>
-        <item name="android:button">@null</item>
-        <item name="android:textAlignment">center</item>
-        <item name="android:layout_gravity">center</item>
-        <item name="android:textColor">@color/selector_navi_text_color</item>
-    </style>
-
     <!-- TextView基本样式-->
-    <style name="SDK" parent="">
+    <style name="Text" parent="">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
-    <style name="App.Text" parent="SDK">
-        <item name="android:textColor">#383838</item>
+    <style name="Text.Default" parent="Text">
+        <item name="android:textColor">#353535</item>
     </style>
 
-    <style name="App.Text.Large">
-        <item name="android:textSize">15sp</item>
+    <style name="Text.Default.Small">
+        <item name="android:textSize">10sp</item>
     </style>
 
-    <style name="App.Text.XLarge">
-        <item name="android:textSize">20sp</item>
+    <style name="Text.Default.Middle">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="Text.Default.Large">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Text.Default.XLarge">
+        <item name="android:textSize">18sp</item>
     </style>
 </resources>

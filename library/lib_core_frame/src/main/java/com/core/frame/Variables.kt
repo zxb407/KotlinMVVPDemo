@@ -8,5 +8,6 @@ package com.core.frame
  *
  */
 object Variables{
+    // -1 断网 0 移动网络 1 wifi
     open var NetworkType:Int = -1
 }

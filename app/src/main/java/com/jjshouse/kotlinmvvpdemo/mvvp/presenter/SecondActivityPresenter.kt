@@ -4,8 +4,8 @@ import com.core.frame.app.BaseApplication
 import com.core.frame.utils.NetworkUtils
 import com.jjshouse.kotlinmvvpdemo.model.mock.HomeDataMock
 import com.jjshouse.kotlinmvvpdemo.mvvp.contract.SecondActivityContract
-import org.cchao.kotlintemplate.ui.base.BasePresenterImpl
-import org.cchao.kotlintemplate.ui.base.BaseView
+import com.jjshouse.kotlinmvvpdemo.base.BasePresenterImpl
+import com.jjshouse.kotlinmvvpdemo.base.BaseView
 import javax.inject.Inject
 
 /**
@@ -14,7 +14,7 @@ import javax.inject.Inject
  * Description:
  *
  */
-class SecondeActivityPresenter
+class SecondActivityPresenter
 @Inject constructor(view: BaseView) : BasePresenterImpl<SecondActivityContract.View>(view),
     SecondActivityContract.Presenter {
     override fun getData() {

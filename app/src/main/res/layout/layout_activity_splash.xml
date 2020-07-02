@@ -32,7 +32,7 @@
             android:id="@+id/iv_logo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_splash_shein"
+            android:src="@mipmap/ic_splash_jjs"
             VVApplication:layout_constraintStart_toStartOf="parent"
             VVApplication:layout_constraintEnd_toEndOf="parent"
             VVApplication:layout_constraintTop_toTopOf="parent"

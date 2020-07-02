@@ -9,6 +9,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.provider.Settings
 import android.view.View
+import com.blankj.utilcode.util.BusUtils
 import com.blankj.utilcode.util.LogUtils
 import com.core.frame.Variables
 import com.core.frame.base.MToolbarActivity
@@ -35,7 +36,7 @@ class MainActivity : MToolbarActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        EventBus.getDefault().register(this)
+        org.greenrobot.eventbus.EventBus.getDefault().register(this)
         initView()
         initEvent()
     }
@@ -43,7 +44,6 @@ class MainActivity : MToolbarActivity(), View.OnClickListener {
     private fun initView() {
         setupTitle("Home")
     }
-
 
     @SuppressLint("CheckResult")
     private fun initEvent() {

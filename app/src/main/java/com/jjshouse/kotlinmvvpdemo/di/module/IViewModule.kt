@@ -2,7 +2,7 @@ package com.jjshouse.kotlinmvvpdemo.di.module
 
 import dagger.Module
 import dagger.Provides
-import org.cchao.kotlintemplate.ui.base.BaseView
+import com.jjshouse.kotlinmvvpdemo.base.BaseView
 
 /**
  * PackageName: com.jjshouse.kotlinmvvpdemo.di.module

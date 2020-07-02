@@ -68,10 +68,7 @@ public class GlideUtil {
     public static void display(RequestBuilder<Drawable> builder, ImageView imageView, GlideOptions op) {
         RequestOptions options = new RequestOptions()
                 .placeholder(op.getReplaceImage())
-                .error(op.getReplaceImage())
-                .skipMemoryCache(true)
-                .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
-                .priority(Priority.HIGH);
+                ;
         if (op.getDoAnimate()) {
             builder.transition(DrawableTransitionOptions.withCrossFade());
         }

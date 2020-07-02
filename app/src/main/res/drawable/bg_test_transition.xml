@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <transition xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@drawable/p_1"/>
-    <item android:drawable="@drawable/p_2"/>
+    <item android:drawable="@mipmap/p_1"/>
+    <item android:drawable="@mipmap/p_2"/>
 </transition>

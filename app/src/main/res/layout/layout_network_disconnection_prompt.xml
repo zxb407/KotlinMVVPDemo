@@ -32,7 +32,7 @@
             android:paddingHorizontal="15dp"
             android:paddingVertical="14dp"
             android:scaleType="fitXY"
-            android:src="@drawable/ic_network_arrow_left" />
+            android:src="@mipmap/ic_network_arrow_left" />
     </FrameLayout>
 
 </FrameLayout>

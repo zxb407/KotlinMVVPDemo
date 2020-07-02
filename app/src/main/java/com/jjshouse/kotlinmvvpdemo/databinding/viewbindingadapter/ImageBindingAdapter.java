@@ -14,7 +14,7 @@ import com.core.frame.utils.glideutils.options.GlideOptionsFactory;
 public class ImageBindingAdapter {
     @BindingAdapter(value = {"imageUrl"}, requireAll = true)
     public static void setImageUrl(ImageView view, String url) {
-        GlideUtil.display(view.getContext(), view, url, GlideOptionsFactory.INSTANCE.get(GlideOptionsFactory.Type.THUMBNAIL));
+        GlideUtil.display(view.getContext(), view, url, GlideOptionsFactory.INSTANCE.get(GlideOptionsFactory.Type.LOGO));
     }
 
     @BindingAdapter(value = {"imageSrc"}, requireAll = true)

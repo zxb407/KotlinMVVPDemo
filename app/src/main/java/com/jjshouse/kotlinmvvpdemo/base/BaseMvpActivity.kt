@@ -5,8 +5,6 @@ import com.jjshouse.kotlinmvvpdemo.di.component.DaggerContractViewComponent
 import com.jjshouse.kotlinmvvpdemo.di.module.ActivityModule
 import com.jjshouse.kotlinmvvpdemo.di.module.IViewModule
 import org.cchao.kotlintemplate.expansion.getAppComponent
-import org.cchao.kotlintemplate.ui.base.BasePresenter
-import org.cchao.kotlintemplate.ui.base.BaseView
 import javax.inject.Inject
 
 /**

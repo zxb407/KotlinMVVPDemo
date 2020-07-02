@@ -177,9 +177,7 @@ dependencies {
     implementation googleDependencies.firebaseMessaging
     implementation googleDependencies.firebaseInappmessagingDisplay
     implementation googleDependencies.firebaseInappmessagingAppindexing
-    implementation googleDependencies.gmsTagmanager
-    implementation googleDependencies.gmsAuth
-    implementation googleDependencies.analytics
+    implementation googleDependencies.firebaseAuth
     implementation googleDependencies.guava
     implementation googleDependencies.flexbox
     implementation otherDependencies.dagger

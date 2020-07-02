@@ -12,7 +12,6 @@ import com.jjshouse.kotlinmvvpdemo.di.component.DaggerFragmentComponent
 import com.jjshouse.kotlinmvvpdemo.di.component.FragmentComponent
 import com.jjshouse.kotlinmvvpdemo.di.module.FragmentModule
 import com.jjshouse.kotlinmvvpdemo.di.module.IViewModule
-import org.cchao.kotlintemplate.ui.base.BaseView
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
@@ -23,7 +22,7 @@ import org.greenrobot.eventbus.ThreadMode
  * Description:
  *
  */
-abstract class BaseFragment : MToolbarFragment(),BaseView {
+abstract class BaseFragment : MToolbarFragment(), BaseView {
 
     open lateinit var mActivity: FragmentActivity
     private var mIsPrepare: Boolean = false

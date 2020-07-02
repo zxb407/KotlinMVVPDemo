@@ -15,11 +15,11 @@ import com.jjshouse.kotlinmvvpdemo.base.BaseMvpActivity
 import com.jjshouse.kotlinmvvpdemo.databinding.ActivitySecondBinding
 import com.jjshouse.kotlinmvvpdemo.model.databean.HomeDataBean
 import com.jjshouse.kotlinmvvpdemo.mvvp.contract.SecondActivityContract
-import com.jjshouse.kotlinmvvpdemo.mvvp.presenter.SecondeActivityPresenter
+import com.jjshouse.kotlinmvvpdemo.mvvp.presenter.SecondActivityPresenter
 import kotlinx.android.synthetic.main.activity_second.*
 
 
-class SecondActivity : BaseMvpActivity<SecondeActivityPresenter>(), SecondActivityContract.View {
+class SecondActivity : BaseMvpActivity<SecondActivityPresenter>(), SecondActivityContract.View {
 
     private var skeletonScreen: SkeletonScreen? = null
     lateinit var binding: ActivitySecondBinding

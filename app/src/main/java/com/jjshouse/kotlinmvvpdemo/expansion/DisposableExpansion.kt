@@ -1,7 +1,7 @@
 package org.cchao.kotlintemplate.expansion
 
 import io.reactivex.disposables.Disposable
-import org.cchao.kotlintemplate.ui.base.BasePresenter
+import com.jjshouse.kotlinmvvpdemo.base.BasePresenter
 
 /**
  * @author cchen6

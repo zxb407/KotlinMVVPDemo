@@ -9,7 +9,6 @@ import com.blankj.utilcode.util.LogUtils
 import com.blankj.utilcode.util.Utils
 import com.core.frame.BuildConfig
 import com.core.frame.R
-import com.core.frame.crash.AndroidCrashHandler
 import com.core.frame.manager.ActivityLifecycleManager
 import com.core.frame.manager.NetWorkStateMonitor
 import com.core.frame.utils.ToastUtils
@@ -42,7 +41,6 @@ open class BaseApplication : Application() {
         super.onCreate()
         instance = this
         ActivityLifecycleManager.init(this)
-        AndroidCrashHandler.init(applicationContext)
         NetWorkStateMonitor.init(this)
         Utils.init(this)
         initLogRule()

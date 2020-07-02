@@ -8,7 +8,7 @@ import com.jjshouse.kotlinmvvpdemo.base.BaseMvvpActivity
 import com.jjshouse.kotlinmvvpdemo.databinding.ActivityThirdBinding
 import com.jjshouse.kotlinmvvpdemo.model.databean.HomeDataBean
 import com.jjshouse.kotlinmvvpdemo.mvvp.contract.SecondActivityContract
-import com.jjshouse.kotlinmvvpdemo.mvvp.presenter.SecondeActivityPresenter
+import com.jjshouse.kotlinmvvpdemo.mvvp.presenter.SecondActivityPresenter
 import com.jjshouse.kotlinmvvpdemo.mvvp.viewmodel.ThirdViewModel
 
 /**
@@ -17,7 +17,7 @@ import com.jjshouse.kotlinmvvpdemo.mvvp.viewmodel.ThirdViewModel
  * Description:
  *
  */
-class ThirdActivity : BaseMvvpActivity<ActivityThirdBinding, ThirdViewModel, SecondeActivityPresenter>(),
+class ThirdActivity : BaseMvvpActivity<ActivityThirdBinding, ThirdViewModel, SecondActivityPresenter>(),
     SecondActivityContract.View {
     private var data:HomeDataBean? = null
 

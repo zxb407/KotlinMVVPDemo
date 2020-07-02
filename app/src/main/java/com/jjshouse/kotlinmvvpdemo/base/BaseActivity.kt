@@ -20,7 +20,6 @@ import com.jjshouse.kotlinmvvpdemo.di.module.ActivityModule
 import com.jjshouse.kotlinmvvpdemo.di.module.IViewModule
 import com.jjshouse.kotlinmvvpdemo.utils.AppUtils
 import org.cchao.kotlintemplate.expansion.getAppComponent
-import org.cchao.kotlintemplate.ui.base.BaseView
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
@@ -31,7 +30,7 @@ import org.greenrobot.eventbus.ThreadMode
  * Description:
  *
  */
-abstract class BaseActivity : MToolbarActivity(),BaseView{
+abstract class BaseActivity : MToolbarActivity(), BaseView {
 
     private val TAG = this.javaClass.simpleName
     private var backPressedListener: BackPressedListener? = null
@@ -51,9 +50,9 @@ abstract class BaseActivity : MToolbarActivity(),BaseView{
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        EventBus.getDefault().register(this)
         initComponentBuilder()
         inject()
-        EventBus.getDefault().register(this)
         initLayout()
         if (isMonitorNetWork()) {
             initTipView()
@@ -64,10 +63,13 @@ abstract class BaseActivity : MToolbarActivity(),BaseView{
     }
 
     open fun initComponentBuilder() {
-        activityComponentBuilder = DaggerActivityComponent.builder().activityModule(ActivityModule(this))
-            .appComponent(getAppComponent()).contractViewComponent(DaggerContractViewComponent.builder().iViewModule(
-                IViewModule(this)
-            ).build())
+        activityComponentBuilder =
+            DaggerActivityComponent.builder().activityModule(ActivityModule(this))
+                .appComponent(getAppComponent()).contractViewComponent(
+                    DaggerContractViewComponent.builder().iViewModule(
+                        IViewModule(this)
+                    ).build()
+                )
     }
 
     fun getInjector(): ActivityComponent {
@@ -123,7 +125,8 @@ abstract class BaseActivity : MToolbarActivity(),BaseView{
     }
 
     private fun initTipView() {
-        mTipView = layoutInflater.inflate(R.layout.layout_network_disconnection_prompt, null) //提示View布局
+        mTipView =
+            layoutInflater.inflate(R.layout.layout_network_disconnection_prompt, null) //提示View布局
         mWindowManager = getSystemService(Context.WINDOW_SERVICE) as WindowManager
         mLayoutParams = WindowManager.LayoutParams(
             ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT,

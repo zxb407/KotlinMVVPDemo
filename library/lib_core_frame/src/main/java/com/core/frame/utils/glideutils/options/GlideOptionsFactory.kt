@@ -12,7 +12,7 @@ object GlideOptionsFactory {
         if (mOptions == null) {
             mOptions = HashMap()
             mOptions!![Type.DEFAULT] = GlideOptions(replaceImage= R.drawable.ic_black_placeholder, doAnimate = true)
-            mOptions!![Type.LOGO] = GlideOptions(replaceImage = R.mipmap.ic_launcher, doAnimate = true)
+            mOptions!![Type.LOGO] = GlideOptions(replaceImage = R.mipmap.pic_default, doAnimate = false)
             mOptions!![Type.THUMBNAIL] = GlideOptions(replaceImage = R.drawable.ic_black_placeholder, doAnimate = true,thumbnail = true,thumb_level = 0.1f)
         }
     }
