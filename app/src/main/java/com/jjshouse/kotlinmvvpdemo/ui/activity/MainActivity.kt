@@ -48,7 +48,7 @@ class MainActivity : MToolbarActivity(), View.OnClickListener {
     @SuppressLint("CheckResult")
     private fun initEvent() {
         bt_jump.setOnClickListener(this)
-
+        bt_jump_1.setOnClickListener(this)
     }
 
     private fun showTip(type: Int) {
@@ -101,7 +101,7 @@ class MainActivity : MToolbarActivity(), View.OnClickListener {
 
     override fun onClick(v: View) {
         when (v.id) {
-            R.id.bt_jump -> {
+            R.id.bt_jump_1 -> {
                 RxPermissions(this@MainActivity)
                     .requestEachCombined(Manifest.permission.WRITE_EXTERNAL_STORAGE)
                     .subscribe {
@@ -120,6 +120,9 @@ class MainActivity : MToolbarActivity(), View.OnClickListener {
                                 }
                             }
                     }
+            }
+            R.id.bt_jump -> {
+                startActivity(Intent(this@MainActivity, SecondActivity::class.java))
             }
         }
 

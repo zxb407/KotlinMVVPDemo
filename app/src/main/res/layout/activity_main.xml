@@ -27,6 +27,15 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
     />
+    <Button
+            android:id="@+id/bt_jump_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="jump third activity"
+            android:onClick="jump01"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+    />
     <ImageView
             android:id="@+id/iv_content1"
             android:layout_width="match_parent"
